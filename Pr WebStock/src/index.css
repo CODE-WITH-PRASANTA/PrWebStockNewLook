@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@supports not (zoom: 0.9) {
+  body {
+    transform: scale(0.9); /* For browsers that don't support zoom (like Firefox) */
+    transform-origin: 0 0; /* Ensures scaling happens from the top-left corner */
+  }
+}
+
+
+a {
+  text-decoration: none;
+}

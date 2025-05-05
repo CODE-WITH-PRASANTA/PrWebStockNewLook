@@ -1,0 +1,164 @@
+/* General Section Styling */
+.responsive-section {
+    padding: 20px 20px;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 3px solid #1b3f72;
+    border-radius: 30px ;
+  }
+  
+  .responsive-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+  }
+  
+  /* Image Container */
+  .responsive-left {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .responsive-image {
+    max-width: 90%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  
+  /* Content Area */
+  .responsive-right {
+    flex: 1 1 50%;
+  }
+  
+  /* Headings and Highlights */
+  .responsive-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1b3f72;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .highlight {
+    color: #ff3c20;
+    font-style: italic;
+  }
+  
+  /* Decorative Line */
+  .responsive-line {
+    width: 120px;
+    height: 5px;
+    background: linear-gradient(to right, #1b2d45, #00e1ff, #f84b5e, #ffcc00);
+    margin-bottom: 25px;
+    border-radius: 4px;
+    margin-left: 0;
+  }
+  
+  /* Paragraph */
+  .responsive-text {
+    font-size: 17px;
+    color: #555;
+    line-height: 1.75;
+    margin-bottom: 30px;
+    text-align: justify;
+  }
+  
+  /* Bullet List */
+  .responsive-list {
+    list-style-type: disc;
+    padding-left: 25px;
+    color: #444;
+    line-height: 1.9;
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  
+  .responsive-list li {
+    margin-bottom: 10px;
+    transition: padding-left 0.2s ease;
+  }
+  .responsive-list li:hover {
+    padding-left: 5px;
+    color: #ff3c20;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 1024px) {
+    .responsive-title {
+      font-size: 30px;
+      text-align: center;
+    }
+  
+    .responsive-line {
+      margin: 0 auto 25px;
+    }
+  
+    .responsive-text,
+    .responsive-list {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .responsive-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .responsive-left,
+    .responsive-right {
+        text-align: start;
+      flex: 0;
+    }
+  
+    .responsive-text {
+      text-align: justify;
+    }
+  
+    .responsive-list {
+      padding-left: 0;
+      list-style-position: inside;
+    }
+  
+    .responsive-title {
+      font-size: 28px;
+    }
+  
+    .responsive-image {
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .responsive-title {
+      font-size: 24px;
+    }
+  
+    .responsive-line {
+      width: 80px;
+      height: 4px;
+    }
+  
+    .responsive-text {
+      font-size: 15px;
+    }
+  
+    .responsive-list {
+      font-size: 15px;
+    }
+  
+    .responsive-section {
+      padding: 50px 15px;
+    }
+  }
+  

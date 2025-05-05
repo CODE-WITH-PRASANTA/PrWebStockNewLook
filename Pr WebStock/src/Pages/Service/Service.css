@@ -1,0 +1,280 @@
+.service-section {
+    background-image: url('../../assets/Service-sec-bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 30px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 0px 0px 400px 0px;
+    border: 3px solid #1e3a8a;
+  }
+  
+  .service-container {
+    max-width: 1200px;
+    margin: 100px auto 0 auto; /* Top margin of 100px, auto left/right */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .service-content {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .service-content h2 {
+    font-size: 2.75rem;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  
+  .service-content p {
+    font-size: 1.15rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .service-list li {
+    font-size: 1.1rem;
+    color: #111827;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+  }
+  
+  .service-list li span {
+    font-size: 1.4rem;
+  }
+  
+  .service-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .service-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .service-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 20px;
+  }
+  
+  .service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1 1 45%; /* responsive columns */
+    min-width: 200px;
+  }
+  
+  .service-list li {
+    font-size: 1.1rem;
+    color: #111827;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+  }
+  
+  .service-list li span {
+    font-size: 1.4rem;
+  }
+
+  
+  
+  /* Large Devices (Desktops, Laptops) */
+@media (max-width: 1200px) {
+    .service-container {
+      max-width: 1000px;
+    }
+  }
+  
+  /* Medium Devices (Tablets) */
+  @media (max-width: 992px) {
+    .service-container {
+      max-width: 800px;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .service-content {
+      min-width: 100%;
+    }
+    .service-image {
+      min-width: 100%;
+    }
+    .service-list-container {
+      gap: 20px;
+    }
+  }
+  
+  /* Small Devices (Large Phones) */
+  @media (max-width: 768px) {
+    .service-section {
+      padding: 20px 10px;
+      border-radius: 0px 0px 200px 0px;
+    }
+    .service-container {
+      max-width: 600px;
+
+    }
+    .service-content h2 {
+      font-size: 2.25rem;
+    }
+    .service-content p {
+      font-size: 1rem;
+    }
+    .service-list li {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Extra Small Devices (Small Phones) */
+  @media (max-width: 480px) {
+    .service-section {
+      padding: 15px 5px;
+      border-radius: 0px 0px 100px 0px;
+    }
+    .service-container {
+      max-width: 400px;
+      gap: 10px;
+    }
+    .service-content h2 {
+      font-size: 1.75rem;
+    }
+    .service-content p {
+      font-size: 0.9rem;
+    }
+    .service-list-container {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .service-list {
+      flex: 1 1 100%;
+    }
+  }
+  
+  /* Smallest Devices */
+  @media (max-width: 320px) {
+    .service-section {
+      padding: 10px 0px;
+    }
+    .service-container {
+      max-width: 280px;
+    }
+    .service-content h2 {
+      font-size: 1.5rem;
+    }
+    .service-content p {
+      font-size: 0.8rem;
+    }
+    .service-list li {
+      font-size: 0.8rem;
+    }
+  }
+
+  /* Add animation to service content */
+.service-content {
+    animation: fadeInLeft 1s ease forwards;
+  }
+  
+  @keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Add animation to service image */
+  .service-image {
+    animation: fadeInRight 1s ease forwards;
+  }
+  
+  @keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Add continuous animation to service image */
+  .service-image img {
+    animation: scaleImage 6s ease-in-out infinite alternate;
+  }
+  
+  @keyframes scaleImage {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.03);
+    }
+  }
+  
+  /* Add fade-in animation to headings and paragraphs */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+  }
+  
+  .delay-1 {
+    animation-delay: 0.3s;
+  }
+  
+  .delay-2 {
+    animation-delay: 0.6s;
+  }
+  
+  .delay-3 {
+    animation-delay: 0.9s;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Add background animation */
+  .service-section {
+    animation: floatBg 10s ease-in-out infinite alternate;
+  }
+  
+  @keyframes floatBg {
+    0% {
+      background-position: center top;
+    }
+    100% {
+      background-position: center bottom;
+    }
+  }

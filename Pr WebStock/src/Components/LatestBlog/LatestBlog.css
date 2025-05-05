@@ -1,0 +1,243 @@
+.Latest-Blog-Container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px 8%;
+    max-width: 1600px;
+    margin: auto;
+    border-top: 4px solid #002244;
+    border-bottom: 4px solid #002244;
+    border-radius: 50px;
+  }
+  
+  .Latest-Blog-Section {
+    flex: 1;
+    min-width: 300px;
+    max-width: 55%;
+    padding-right: 40px;
+  }
+  
+  .Latest-Blog-Heading-Small {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #00509e;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  .Latest-Blog-Heading {
+    font-size: 32px;
+    font-weight: 800;
+    color: #002244;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+  
+  .Latest-Blog-Heading span {
+    color: #1976d2;
+  }
+  
+  .Latest-Blog-Card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 25px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(0, 64, 128, 0.08);
+    border: 1px solid #e3f2fd;
+  }
+  
+  .Latest-Blog-Title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0a2942;
+    margin-bottom: 10px;
+  }
+  
+  .Latest-Blog-Date {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .Latest-Blog-Date svg {
+    margin-right: 5px;
+  }
+  
+  .Client-Review-Section {
+    flex: 1;
+    min-width: 250px;
+    max-width: 38%;
+  }
+  
+  .Client-Review-Card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 25px 20px;
+    box-shadow: 0 6px 20px rgba(0, 64, 128, 0.08);
+    border: 1px solid #e3f2fd;
+    text-align: center;
+  }
+  
+  .Client-Review-Image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .Client-Review-Text {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  .Client-Review-Name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0a2942;
+    margin-bottom: 5px;
+  }
+  
+  .Client-Review-Designation {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .Client-Review-Company {
+    color: #1976d2;
+  }
+  
+  .Client-Review-Stars {
+    margin-bottom: 20px;
+  }
+  
+  .Client-Review-Stars svg {
+    font-size: 18px;
+    margin: 0 2px;
+  }
+  
+  .Client-Review-Stars .filled {
+    color: #ffd700;
+  }
+  
+  .Client-Review-Stars .empty {
+    color: #ccc;
+  }
+  
+  .Client-Review-Arrows {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .Client-Review-Arrows button {
+    background-color: #1976d2;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 50%;
+  }
+  
+  .Client-Review-Arrows button:hover {
+    background-color: #00509e;
+  }
+
+  /* ====== Media Queries for Responsiveness ====== */
+
+@media screen and (max-width: 1200px) {
+    .Latest-Blog-Container {
+      padding: 50px 5%;
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .Latest-Blog-Section,
+    .Client-Review-Section {
+      max-width: 100%;
+      padding-right: 0;
+    }
+  
+    .Client-Review-Section {
+      margin-top: 40px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .Latest-Blog-Heading {
+      font-size: 26px;
+    }
+  
+    .Latest-Blog-Card {
+      padding: 20px 15px;
+    }
+  
+    .Latest-Blog-Title {
+      font-size: 16px;
+    }
+  
+    .Client-Review-Card {
+      padding: 20px 15px;
+    }
+  
+    .Client-Review-Image {
+      width: 70px;
+      height: 70px;
+    }
+  
+    .Client-Review-Text {
+      font-size: 14px;
+    }
+  
+    .Client-Review-Name {
+      font-size: 16px;
+    }
+  
+    .Client-Review-Stars svg {
+      font-size: 16px;
+    }
+  
+    .Client-Review-Arrows button {
+      padding: 8px 12px;
+      font-size: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .Latest-Blog-Heading {
+      font-size: 22px;
+    }
+  
+    .Latest-Blog-Heading-Small {
+      font-size: 12px;
+    }
+  
+    .Latest-Blog-Card {
+      margin-bottom: 15px;
+    }
+  
+    .Client-Review-Card {
+      padding: 15px 10px;
+    }
+  
+    .Client-Review-Text {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+  
+    .Client-Review-Name {
+      font-size: 15px;
+    }
+  
+    .Client-Review-Designation {
+      font-size: 13px;
+    }
+  
+    .Client-Review-Arrows button {
+      margin: 0 6px;
+    }
+  }
+  

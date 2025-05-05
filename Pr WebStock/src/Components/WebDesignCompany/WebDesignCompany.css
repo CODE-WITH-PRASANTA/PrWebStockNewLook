@@ -1,0 +1,208 @@
+.webdesign-company-section {
+    background-color: #f9fafc;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+  }
+  
+  .webdesign-company-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+  }
+  
+  .webdesign-company-content {
+    text-align: justify;
+    flex: 1 1 60%;
+  }
+  
+  .webdesign-company-content h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1b3f72;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  .webdesign-company-highlight {
+    color: #e94e77;
+  }
+  
+  .webdesign-company-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .webdesign-company-feature-list {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: #444;
+    font-size: 16px;
+  }
+  
+  .webdesign-company-feature-list li {
+    margin-bottom: 10px;
+  }
+  
+  /* Form Styling */
+  .webdesign-company-form {
+    flex: 1 1 35%;
+  }
+  
+  .webdesign-company-form-box {
+    background: #fff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .webdesign-company-form-box h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1b3f72;
+  }
+  
+  .webdesign-company-form-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .webdesign-company-form-box input,
+  .webdesign-company-form-box textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #fdfdfd;
+  }
+  
+  .webdesign-company-form-box textarea {
+    resize: vertical;
+  }
+  
+  .webdesign-company-captcha-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #fafafa;
+  }
+  
+  .webdesign-company-captcha-placeholder {
+    margin-left: auto;
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+  }
+  
+  .webdesign-company-form-box button {
+    background-color: #1b3f72;
+    color: #fff;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .webdesign-company-form-box button:hover {
+    background-color: #16335d;
+  }
+  /* Responsive Design */
+@media (max-width: 1200px) {
+    .webdesign-company-content h2 {
+      font-size: 28px;
+    }
+  
+    .webdesign-company-form-box {
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .webdesign-company-container {
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    .webdesign-company-content,
+    .webdesign-company-form {
+        text-align: justify;
+      flex: 1 1 100%;
+    }
+  
+    .webdesign-company-content h2 {
+      font-size: 26px;
+      text-align: center;
+    }
+  
+    .webdesign-company-content p {
+        text-align: justify;
+    }
+  
+    .webdesign-company-form-box {
+      margin: 0 auto;
+      max-width: 500px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .webdesign-company-content h2 {
+      font-size: 24px;
+    }
+  
+    .webdesign-company-content p,
+    .webdesign-company-feature-list {
+      font-size: 15px;
+    }
+  
+    .webdesign-company-form-box h3 {
+      font-size: 20px;
+      text-align: center;
+    }
+  
+    .webdesign-company-form-box form {
+      gap: 12px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .webdesign-company-section {
+      padding: 40px 15px;
+    }
+  
+    .webdesign-company-content h2 {
+      font-size: 22px;
+      line-height: 1.4;
+    }
+  
+    .webdesign-company-form-box {
+      padding: 18px;
+    }
+  
+    .webdesign-company-form-box input,
+    .webdesign-company-form-box textarea {
+      font-size: 14px;
+      padding: 10px 12px;
+    }
+  
+    .webdesign-company-form-box button {
+      font-size: 15px;
+      padding: 10px;
+    }
+  }
+  

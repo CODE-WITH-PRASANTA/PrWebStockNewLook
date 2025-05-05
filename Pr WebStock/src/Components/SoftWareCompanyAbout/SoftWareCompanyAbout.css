@@ -1,0 +1,104 @@
+.SoftwareCompany-About-Wrapper {
+    padding: 10px 20px;
+    background-color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .SoftwareCompany-About-Container {
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .SoftwareCompany-About-Left {
+    flex: 1;
+  }
+  
+  .SoftwareCompany-About-Title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
+  }
+  
+  .SoftwareCompany-About-Title span {
+    color: #3b84c3;
+  }
+  
+  .SoftwareCompany-About-UnderlineBar {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .SoftwareCompany-About-Bar {
+    height: 3px;
+    width: 30px;
+    display: inline-block;
+    border-radius: 2px;
+  }
+  
+  .SoftwareCompany-About-Bar.Blue {
+    background-color: #3b84c3;
+  }
+  
+  .SoftwareCompany-About-Bar.Black {
+    background-color: #111;
+  }
+  
+  .SoftwareCompany-About-Bar.Yellow {
+    background-color: #ffe93b;
+  }
+  
+  .SoftwareCompany-About-Bar.Pink {
+    background-color: #ff7eb3;
+  }
+  
+  .SoftwareCompany-About-Content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    line-height: 1.8;
+    color: #333;
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: justify;
+  }
+  
+  .SoftwareCompany-About-Column {
+    flex: 1;
+  }
+  
+  .SoftwareCompany-About-Right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .SoftwareCompany-About-Right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+  
+  @media (max-width: 768px) {
+    .SoftwareCompany-About-Container {
+      flex-direction: column;
+    }
+  
+    .SoftwareCompany-About-Content {
+      flex-direction: column;
+    }
+  
+    .SoftwareCompany-About-Title {
+      font-size: 24px;
+    }
+  
+    .SoftwareCompany-About-Content {
+      font-size: 15px;
+    }
+  }
+  

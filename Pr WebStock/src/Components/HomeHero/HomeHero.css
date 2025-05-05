@@ -1,0 +1,204 @@
+.HomeHero-container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 15%;
+    color: white;
+    position: relative;
+    transition: background-image 1s ease-in-out;
+  }
+  
+  .HomeHero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.40);
+    z-index: 0;
+    transition: background-color 0.5s ease;
+  }
+  
+  .HomeHero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    animation: fadeSlideIn 0.8s ease forwards;
+    transition: all 0.5s ease;
+    margin-top: 60px;
+
+  }
+  
+  @keyframes fadeSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+/* Hero Text Styles */
+.HomeHero-heading {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #f1f1f1;
+    text-transform: uppercase;
+  }
+  
+  .HomeHero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #ffffff;
+    line-height: 1.2;
+  }
+  
+  .HomeHero-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    color: #e2e8f0;
+  }
+  
+  /* Button Group */
+  .HomeHero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  
+  /* Shared Button Style */
+  .HomeHero-button {
+    padding: 14px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Contact Button */
+  .HomeHero-contact {
+    background-color: #ffffff;
+    color: #002e6d;
+  }
+  
+  .HomeHero-contact:hover {
+    background-color: #f3f3f3;
+    transform: translateY(-2px);
+  }
+  
+  /* Demo Button */
+  .HomeHero-demo {
+    background-color: #0049b7;
+    color: white;
+  }
+  
+  .HomeHero-demo:hover {
+    background-color: #003ba0;
+    transform: translateY(-2px);
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .HomeHero-title {
+      font-size: 2rem;
+    }
+  
+    .HomeHero-text {
+      font-size: 1rem;
+    }
+  
+    .HomeHero-buttons {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+  
+  /* Tablet devices (768px to 1024px) */
+@media (max-width: 1024px) {
+    .HomeHero-container {
+      padding: 0 10%;
+      min-height: 70vh;
+    }
+  
+    .HomeHero-title {
+      font-size: 2.4rem;
+    }
+  
+    .HomeHero-text {
+      font-size: 1.05rem;
+    }
+  }
+  
+  /* Mobile large (600px to 768px) */
+  @media (max-width: 768px) {
+    .HomeHero-container {
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 8%;
+      min-height: 70vh;
+      text-align: start;
+    }
+  
+    .HomeHero-content {
+        margin-top: 60px;
+      max-width: 100%;
+    }
+  
+    .HomeHero-title {
+      font-size: 2rem;
+    }
+  
+    .HomeHero-text {
+        text-align: justify;
+      font-size: 1rem;
+    }
+  
+    .HomeHero-buttons {
+      flex-direction: column;
+      gap: 12px;
+      align-items: start;
+    }
+  
+    .HomeHero-button {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+  
+  /* Mobile small (below 480px) */
+  @media (max-width: 480px) {
+    .HomeHero-container {
+      padding: 0 5%;
+      min-height: 65vh;
+    }
+  
+    .HomeHero-title {
+      font-size: 1.6rem;
+    }
+  
+    .HomeHero-text {
+      font-size: 0.95rem;
+    }
+  
+    .HomeHero-heading {
+      font-size: 0.9rem;
+    }
+  
+    .HomeHero-button {
+      font-size: 0.95rem;
+      padding: 12px 24px;
+    }
+  }
+  

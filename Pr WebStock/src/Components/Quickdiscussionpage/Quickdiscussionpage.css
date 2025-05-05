@@ -1,0 +1,215 @@
+.quick-content {
+    max-width: 80%;
+    margin-bottom: 20px;
+    margin: auto; 
+  }
+  
+  .quick-content h1 {
+    font-size: 2.5em;
+    margin: 0;
+  }
+  
+  .quick-content p {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  
+  .quick-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .quick-contact-info .phone, .quick-contact-info .live-chat {
+    text-align: center;
+    padding: 10px;
+    width: 50%;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .quick-contact-info .phone:hover, .quick-contact-info .live-chat:hover {
+    transform: scale(1.05);
+  }
+  
+  .quick-contact-info i {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2em;
+    margin-bottom: 5px;
+    color: #ffd700; /* Gold color for better contrast */
+    text-align: center;
+  }
+  
+  .quick-contact-info p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    margin-top: 0px;
+  }
+  .phone ,.live-chat{
+    cursor: pointer;
+  }
+  .quick-contact-info span {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  .robot-icon {
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+  }
+  
+    .quick-contact-info {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .quick-get-started-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50%;
+      padding: 40px;
+      background: linear-gradient(90deg, #043f6a 0%, #4294c6 100%);
+      color: white;
+      box-sizing: border-box;
+    }
+    
+    .quick-discussion-container {
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1); /* Slight background for contrast */
+      border-radius: 20px;
+      padding: 20px;
+      max-width: 1200px; /* Limit the width */
+      width: 90%;
+    }
+  
+    
+    /* Background pattern updates */
+    .quick-get-started-container::before {
+      content: '';
+      position: absolute;
+      top: 5%;
+      width: 200px;
+      height: 200px;
+      background-image: radial-gradient(circle, #7bb9e6 1px, transparent 1px);
+      background-size: 8px 8px;
+    }
+    
+    .quick-get-started-container::before {
+      left:10%; /* Adjusted for better positioning */
+    }
+    
+    .quick-get-started-container::after {
+      right: 10%; /* Adjusted for better positioning */
+    }
+    
+    @media (max-width: 768px) {
+      .quick-discussion-container {
+        flex-direction: column;
+        padding: 15px;
+        height: auto;
+      }
+    
+      .quick-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    
+      .quick-content h1 {
+        font-size: 2em;
+      }
+    
+      .quick-content p {
+        font-size: 1em;
+      }
+    
+      .quick-contact-info {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+    
+      .quick-contact-info .phone, 
+      .quick-contact-info  {
+        width: 80%; /* Ensure they take up most of the width */
+        height: 60px;
+        display: flex;
+        align-items: center; /* Vertically center the quick-content */
+        justify-content: center; /* Horizontally center the quick-content */
+        text-align: center;
+      }
+    
+      .robot-icon {
+        width: 200px;
+        margin-top: 20px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .quick-get-started-container {
+        padding: 20px;
+        max-width: 100%;
+      }
+    
+      .quick-discussion-container {
+        height: auto;
+        flex-direction: column;
+        padding: 10px;
+      }
+    
+      .quick-content h1 {
+        margin-top: 20px;
+        font-size: 1.5em;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    
+      .quick-content p {
+        font-size: 0.9em;
+        text-align: center;
+      }
+    
+      .quick-contact-info .phone {
+        height: 50px;
+        width: 90%; /* Full width */
+        font-size: 1em;
+        padding: 10px;
+        display: flex;
+        align-items: center; /* Vertically center the quick-content */
+        justify-content: center; /* Horizontally center the quick-content */
+        flex-direction: column;
+      }
+    .quick-get-started-container::before,
+    .quick-get-started-container::after {
+      width: 50px;
+      height: 50px;
+    }
+    
+      .robot-icon {
+        margin-top: 0;
+        width: 120px;
+      }
+    
+      .quick-contact-info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    
+      .live-chat {
+        display: none;
+      }
+    }
+    

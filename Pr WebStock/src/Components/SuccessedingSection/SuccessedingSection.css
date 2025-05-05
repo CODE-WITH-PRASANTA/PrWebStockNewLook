@@ -1,0 +1,138 @@
+.Success-Section-Wrapper {
+    background-color: #f5f6f3;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .Success-Section-Container {
+    max-width: 1280px;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .Success-Section-Left {
+    flex: 1;
+  }
+  
+  .Success-Section-Title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 14px;
+  }
+  
+  .Success-Section-Title span {
+    color: #3b84c3;
+  }
+  
+  .Success-Section-Bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  
+  .Success-Section-Bar-Item {
+    height: 4px;
+    width: 35px;
+    border-radius: 4px;
+  }
+  
+  .Success-Section-Bar-Item.Red {
+    background-color: #e53935;
+  }
+  
+  .Success-Section-Bar-Item.Yellow {
+    background-color: #fbc02d;
+  }
+  
+  .Success-Section-Bar-Item.Green {
+    background-color: #43a047;
+  }
+  
+  .Success-Section-Bar-Item.Blue {
+    background-color: #1e88e5;
+  }
+  
+  .Success-Section-Description {
+    font-size: 16.5px;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+  
+  .Success-Section-List {
+    display: flex;
+    gap: 60px;
+    font-size: 16px;
+    color: #444;
+    font-weight: 500;
+    line-height: 2;
+  }
+  
+  .Success-Section-Right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Success-Section-Right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  /* Responsive for tablets and below */
+
+@media (max-width: 768px) {
+    .Success-Section-Container {
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    .Success-Section-Title {
+      font-size: 26px;
+      text-align: center;
+    }
+  
+    .Success-Section-Description {
+      font-size: 15px;
+      text-align: justify;
+    }
+  
+    .Success-Section-List {
+      align-items: flex-start;
+    }
+  
+    .Success-Section-Right {
+      justify-content: center;
+    }
+  }
+  
+  /* Responsive for small phones */
+  @media (max-width: 480px) {
+    .Success-Section-Wrapper {
+      padding: 40px 15px;
+    }
+  
+    .Success-Section-Title {
+      font-size: 22px;
+    }
+  
+    .Success-Section-Bar {
+      justify-content: center;
+    }
+  
+    .Success-Section-List {
+      font-size: 14px;
+      gap: 15px;
+    }
+  
+    .Success-Section-Description {
+      font-size: 14px;
+    }
+  }
+  

@@ -1,0 +1,214 @@
+/* Section Wrapper */
+.what-we-are-section {
+    margin-top: 30px;
+    padding: 80px 8%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Main Container */
+  .what-we-are-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Content Section */
+  .what-we-are-content {
+    flex: 1;
+    min-width: 320px;
+  }
+  
+  /* Subheading */
+  .what-we-are-subheading {
+    font-size: 15px;
+    color: #0077cc;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  /* Main Title */
+  .what-we-are-title {
+    font-size: 38px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 10px;
+  }
+  
+  .what-we-are-highlight {
+    color: #3293db;
+  }
+  
+  /* Decorative Underline */
+  .what-we-are-underline {
+    display: flex;
+    margin: 15px 0 30px;
+    height: 5px;
+    width: 110px;
+    gap: 6px;
+  }
+  
+  .underline-blue,
+  .underline-pink,
+  .underline-yellow {
+    border-radius: 3px;
+  }
+  
+  .underline-blue {
+    background-color: #3293db;
+    width: 30%;
+  }
+  .underline-pink {
+    background-color: #f75369;
+    width: 30%;
+  }
+  .underline-yellow {
+    background-color: #ffe869;
+    width: 40%;
+  }
+  
+  /* Description */
+  .what-we-are-description {
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.9;
+    color: #444;
+    margin-bottom: 30px;
+  }
+  
+  /* Services List */
+  .what-we-are-services {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    gap: 16px;
+  }
+  
+  .what-we-are-services li {
+    position: relative;
+    padding-left: 24px;
+    font-size: 15px;
+    color: #222;
+    transition: all 0.3s ease;
+  }
+  
+  .what-we-are-services li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #3293db;
+    font-size: 22px;
+    line-height: 1;
+  }
+  
+  .what-we-are-services li:hover {
+    color: #3293db;
+    transform: translateX(5px);
+  }
+  
+  /* Image Section */
+  .what-we-are-image-wrapper {
+    flex: 1;
+    min-width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .what-we-are-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 16px;
+    transition: transform 0.4s ease;
+  }
+  /* Responsive Design Enhancements */
+
+/* Tablets (portrait and smaller) */
+@media (max-width: 991px) {
+    .what-we-are-section {
+      padding: 60px 5%;
+    }
+  
+    .what-we-are-title {
+      font-size: 32px;
+    }
+  
+    .what-we-are-description {
+      font-size: 15px;
+    }
+  
+    .what-we-are-image {
+      max-width: 500px;
+    }
+  }
+  
+  /* Mobile Devices */
+  @media (max-width: 768px) {
+    .what-we-are-section {
+      padding: 50px 4%;
+    }
+  
+    .what-we-are-title {
+      font-size: 26px;
+    }
+  
+    .what-we-are-subheading {
+      font-size: 13px;
+    }
+  
+    .what-we-are-description {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+  
+    .what-we-are-image {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+  
+    .what-we-are-services li {
+      font-size: 14px;
+    }
+  
+    .what-we-are-underline {
+      height: 4px;
+      width: 90px;
+      margin: 10px auto 25px;
+    }
+  }
+  
+  /* Very Small Devices */
+  @media (max-width: 480px) {
+    .what-we-are-title {
+      font-size: 22px;
+    }
+  
+    .what-we-are-description {
+      font-size: 13.5px;
+    }
+  
+    .what-we-are-section {
+      padding: 40px 3%;
+    }
+  
+    .what-we-are-services {
+      gap: 12px;
+    }
+  
+    .what-we-are-services li {
+      padding-left: 20px;
+      font-size: 13.5px;
+    }
+  
+    .what-we-are-services li::before {
+      font-size: 18px;
+    }
+  }
+  

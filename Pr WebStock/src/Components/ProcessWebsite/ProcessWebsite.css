@@ -1,0 +1,104 @@
+.Process-Website-section {
+    padding: 60px 20px;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .Process-Website-container {
+    max-width: 1280px;
+    background-color: #ffffff;
+    padding: 40px 35px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    text-align: center;
+    border-left: 6px solid #e94e77;
+  }
+  
+  .Process-Website-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1b3f72;
+    margin-bottom: 15px;
+  }
+  
+  .Process-Website-divider {
+    width: 80px;
+    height: 4px;
+    background: #e94e77;
+    border: none;
+    margin: 0 auto 25px;
+    border-radius: 2px;
+  }
+  
+  .Process-Website-text {
+    font-size: 17px;
+    color: #444;
+    line-height: 1.9;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+  
+
+  /* Responsive Design */
+@media (max-width: 992px) {
+    .Process-Website-container {
+      padding: 30px 25px;
+    }
+  
+    .Process-Website-title {
+      font-size: 28px;
+    }
+  
+    .Process-Website-text {
+      font-size: 16px;
+    }
+  
+    .Process-Website-divider {
+      width: 70px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .Process-Website-container {
+      padding: 25px 20px;
+    }
+  
+    .Process-Website-title {
+      font-size: 26px;
+    }
+  
+    .Process-Website-text {
+      font-size: 15.5px;
+    }
+  
+    .Process-Website-divider {
+      width: 60px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .Process-Website-section {
+      padding: 40px 15px;
+    }
+  
+    .Process-Website-container {
+      padding: 20px 15px;
+    }
+  
+    .Process-Website-title {
+      font-size: 22px;
+    }
+  
+    .Process-Website-text {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+  
+    .Process-Website-divider {
+      width: 50px;
+      height: 3px;
+    }
+  }
+  

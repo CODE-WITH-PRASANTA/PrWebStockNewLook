@@ -1,0 +1,128 @@
+.footer {
+    background: linear-gradient(90deg, #043f6a 0%, #4294c6 100%);
+    padding: 20px 10px;
+    text-align: center;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .company-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+  }
+  
+  .company-info {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  .footer-link {
+    color: #ffffff;
+    margin: 0 6px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .footer-link:hover {
+    color: #e94e77;
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .footer-contact {
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+  
+  .footer-contact a {
+    font-weight: 600;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer {
+      padding: 30px 15px;
+    }
+    .footer-inner {
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer {
+      padding: 20px 10px;
+    }
+    .footer-inner {
+      max-width: 100%;
+    }
+    .company-name {
+      font-size: 14px;
+    }
+    .company-info {
+      font-size: 12px;
+    }
+    .footer-contact {
+      font-size: 12px;
+    }
+  }
+
+  .footer-social {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .social-icon {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: #ffffff;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .social-icon:hover {
+    background-color: #e94e77;
+    transform: scale(1.1);
+    color: #ffffff;
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .footer-social {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  }
+  

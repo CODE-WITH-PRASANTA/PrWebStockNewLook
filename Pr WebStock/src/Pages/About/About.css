@@ -1,0 +1,174 @@
+.Main-About-Sec-Wrapper {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 70px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 0px 0px 400px 0px;
+    border: 3px solid #2d4a77;
+  }
+  
+  .Main-About-Sec-Overlay {
+    padding: 60px 20px;
+  }
+  
+  .Main-About-Sec-Container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  
+  .Main-About-Sec-Content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .Main-About-Sec-Left {
+    flex: 1;
+    padding: 20px;
+    animation: fadeInUp 0.8s ease-in-out;
+  }
+  
+  .Main-About-Sec-Title {
+    font-size: 36px;
+    color: #2d4a77;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-left: 6px solid #e94e77;
+    padding-left: 14px;
+    letter-spacing: 1px;
+  }
+  
+  .Main-About-Sec-Description {
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+    max-width: 620px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+  }
+  
+  .Main-About-Sec-Right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: fadeInRight 0.8s ease-in-out;
+  }
+  
+  .Main-About-Sec-Image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  /* Continuous Fade In Up Animation */
+.Main-About-Sec-Left {
+    animation: fadeInUpLoop 3s ease-in-out infinite alternate;
+  }
+  
+  /* Continuous Fade In Right Animation */
+  .Main-About-Sec-Right {
+    animation: fadeInRightLoop 1.5s ease-in-out infinite alternate;
+  }
+  
+  /* Looping Animations */
+  @keyframes fadeInUpLoop {
+    0% {
+      opacity: 0.8;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes fadeInRightLoop {
+    0% {
+      opacity: 0.8;
+      transform: translateX(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(-10px);
+    }
+  }
+  
+
+  /* Responsive Design - Media Queries */
+@media (max-width: 1024px) {
+    .Main-About-Sec-Content {
+        gap: 0px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .Main-About-Sec-Left,
+    .Main-About-Sec-Right {
+      width: 100%;
+      padding: 30px 0px;
+    }
+  
+    .Main-About-Sec-Title {
+      font-size: 30px;
+    }
+  
+    .Main-About-Sec-Description {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .Main-About-Sec-Overlay {
+      padding: 40px 15px;
+    }
+  
+    .Main-About-Sec-Title {
+      font-size: 26px;
+    }
+  
+    .Main-About-Sec-Description {
+      font-size: 15px;
+    }
+  
+    .Main-About-Sec-Image {
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Main-About-Sec-Wrapper {
+        border-radius: 0px 0px 200px 0px;
+      padding: 50px 15px;
+    }
+  
+    .Main-About-Sec-Overlay {
+      padding: 30px 10px;
+    }
+  
+    .Main-About-Sec-Title {
+      font-size: 22px;
+      padding-left: 10px;
+      border-left-width: 4px;
+    }
+  
+    .Main-About-Sec-Description {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  
+    .Main-About-Sec-Image {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+  

@@ -1,0 +1,276 @@
+/* Overall Container */
+.navbar-container {
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  /* Top Bar Container */
+.navbar-topbar {
+    background-color: #246896;
+    color: #fff;
+  }
+  
+  .Topbar-Container{
+    margin: auto;
+    max-width: 1500px;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 40px;
+    align-items: center;
+    font-size: 14px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+
+  /* Left Section */
+  .navbar-topbar-left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+  }
+  
+  .navbar-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  
+  /* Icon Styling */
+  .navbar-icon {
+    font-size: 14px;
+    color: #ffcc00;
+  }
+  
+  /* Right Section - Social Icons */
+  .navbar-topbar-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .navbar-social-icon {
+    background-color: white;
+    color: #246896;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    font-size: 14px;
+  }
+  
+  .navbar-social-icon:hover {
+    background-color: #ffcc00;
+    color: #246896;
+    transform: scale(1.1);
+  }
+
+
+/* Main Navbar */
+.navbar-main {
+   
+    padding: 16px 40px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+
+
+  .Navbar-Main-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1600px;
+    margin: auto;
+  }
+  
+  .navbar-main-left {
+    flex: 1;
+  }
+  
+  .navbar-logo {
+    height: 55px;
+    object-fit: contain;
+  }
+  
+  /* Navbar Links */
+  .navbar-main-links {
+    flex: 3;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  
+  .navbar-link-item {
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding-bottom: 4px;
+   
+  }
+
+  .navbar-link-item a{
+    color: #1d4e89;
+  }
+  
+  .navbar-link-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #246896;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .navbar-link-item:hover {
+    color: #246896;
+  }
+  
+  .navbar-link-item:hover::after {
+    width: 100%;
+  }
+  
+  /* Right Button */
+  .navbar-main-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .navbar-demo-btn {
+    background: linear-gradient(90deg, #1d4e89, #3298dc);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .navbar-demo-btn:hover {
+    background: linear-gradient(90deg, #3298dc, #1d4e89);
+    transform: translateY(-2px);
+  }
+  
+
+  /* Hamburger icon */
+.navbar-mobile-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Mobile Menu Overlay */
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 280px;
+    background-color: white;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.2);
+    z-index: 9999;
+    padding: 20px;
+    transition: left 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mobile-menu-overlay.open {
+    left: 0;
+  }
+  
+  .mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .mobile-logo {
+    height: 40px;
+  }
+  
+  .close-icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Mobile Menu Items */
+  .mobile-menu-links {
+    list-style: none;
+    margin-top: 30px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    font-weight: 600;
+  }
+
+  .mobile-menu-links a {
+    color: #1d4e89;
+  }
+  
+  .mobile-menu-links li {
+    cursor: pointer;
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  /* Mobile Demo Button */
+  .mobile-demo-btn {
+    margin-top: 30px;
+    background: linear-gradient(90deg, #1d4e89, #3298dc);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .navbar-main-links,
+    .navbar-main-right {
+      display: none;
+    }
+  
+    .navbar-mobile-toggle {
+      display: block;
+    }
+  }
+  
+  
+  /* Add these media queries at the end of your CSS file */
+
+/* Tablet View */
+@media (max-width: 992px) {
+    .Topbar-Container {
+      display: none;
+    }
+  }
+  

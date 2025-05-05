@@ -1,0 +1,121 @@
+.specialized-section {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 1400px;
+    margin: auto;
+  }
+  
+  .specialized-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .specialized-mission {
+    color: #6c757d;
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+  
+  .specialized-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .specialized-card {
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    min-width: 220px;
+    transition: transform 0.3s ease;
+    animation: rotateCard 5s infinite linear;
+  }
+  
+  .specialized-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .specialized-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .specialized-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .specialized-card p {
+    text-align: justify;
+    color: #6c757d;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  @keyframes rotateCard {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    75% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+  }
+  }
+  
+
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+  .specialized-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+  }
+
+  .specialized-card {
+    width: 90%; /* Makes cards occupy 90% of the screen width for readability */
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .specialized-section {
+    padding: 30px 10px;
+  }
+
+  .specialized-title {
+    font-size: 28px; /* Smaller font for mobile */
+  }
+
+  .specialized-mission {
+    font-size: 14px;
+  }
+
+  .specialized-container {
+    width: 85%; /* Make container fully responsive */
+    margin: auto;
+  }
+
+  .specialized-card {
+    padding: 15px;
+  }
+
+  .specialized-icon {
+    width: 50px;
+    height: 50px;
+  }
+}

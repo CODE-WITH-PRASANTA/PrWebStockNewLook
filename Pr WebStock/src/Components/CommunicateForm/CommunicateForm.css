@@ -1,0 +1,173 @@
+.Communicate-Form-Container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 50px;
+    border-radius: 16px;
+    max-width: 1300px;
+    margin: auto;
+  }
+  
+  .Communicate-Form-FormWrapper,
+  .Communicate-Form-InfoWrapper {
+    width: 48%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .Communicate-Form-Title {
+    font-size: 30px;
+    font-weight: 900;
+    color: #1a073a;
+    margin-bottom: 15px;
+    text-align: start;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .Communicate-Form-Description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.8;
+    text-align: start;
+  }
+  
+  .Communicate-Form-Form .Communicate-Form-Row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .Communicate-Form-Input,
+  .Communicate-Form-Textarea {
+    width: 100%;
+    padding: 16px;
+    border: 1.5px dashed #e02444;
+    border-radius: 30px;
+    font-size: 16px;
+    background: #fff;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .Communicate-Form-Input::placeholder,
+  .Communicate-Form-Textarea::placeholder {
+    color: #aaa;
+  }
+  
+  .Communicate-Form-Input:focus,
+  .Communicate-Form-Textarea:focus {
+    border-color: #c71f3a;
+    background: #fdfdfd;
+  }
+  
+  .Communicate-Form-Textarea {
+    height: 150px;
+    resize: none;
+    border-radius: 20px;
+  }
+  
+  .Communicate-Form-Button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #e02444, #c71f3a);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+  }
+  
+  .Communicate-Form-Button:hover {
+    background: linear-gradient(45deg, #c71f3a, #9e182d);
+  }
+  
+  .Communicate-Form-Details {
+    margin-top: 20px;
+    padding: 10px 15px;
+  }
+  
+  .Communicate-Form-DetailItem {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .Communicate-Form-Icon {
+    font-size: 24px;
+    color: #e02444;
+    border: 2px dashed #e02444;
+    padding: 12px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .Communicate-Form-DetailItem span {
+    text-align: start;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Responsive: Tablet */
+  @media screen and (max-width: 1024px) {
+    .Communicate-Form-Container {
+      flex-direction: column;
+      gap: 15px;
+      padding: 30px;
+    }
+  
+    .Communicate-Form-FormWrapper,
+    .Communicate-Form-InfoWrapper {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .Communicate-Form-Description {
+      font-size: 14px;
+    }
+  
+    .Communicate-Form-Button {
+      font-size: 16px;
+      padding: 12px;
+      margin-top: 10px;
+    }
+  
+    .Communicate-Form-Details {
+      padding: 20px 0px;
+    }
+  }
+  
+  /* Responsive: Mobile */
+  @media screen and (max-width: 480px) {
+    .Communicate-Form-Container {
+      padding: 15px;
+    }
+  
+    .Communicate-Form-Description {
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+  
+    .Communicate-Form-Button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .Communicate-Form-DetailItem span {
+      font-size: 14px;
+    }
+  }
+  
+ 

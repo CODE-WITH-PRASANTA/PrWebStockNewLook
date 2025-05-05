@@ -1,0 +1,166 @@
+.Service-System-section {
+    background: linear-gradient(135deg, #f3f8ff, #ffffff);
+    padding: 80px 20px;
+  }
+  
+  .Service-System-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .Service-System-heading {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1e2a3a;
+    margin-bottom: 10px;
+  }
+  
+  .Service-System-subheading {
+    font-size: 18px;
+    color: #6a7688;
+    margin-bottom: 50px;
+  }
+  
+  .Service-System-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+  }
+  
+  .Service-System-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 35px 25px;
+    width: 280px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #dfe7f3;
+  }
+  
+  .Service-System-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Service-System-icon-wrapper {
+    background-color: #eef2fc;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .Service-System-icon {
+    font-size: 32px;
+    color: #3e64ff;
+  }
+  
+  .Service-System-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 12px;
+  }
+  
+  .Service-System-description {
+    font-size: 15px;
+    color: #5a5f63;
+    line-height: 1.6;
+  }
+  
+  /* Media Queries for responsiveness */
+
+/* Tablets (768px and down) */
+@media (max-width: 992px) {
+    .Service-System-container {
+        gap: 0px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .Service-System-card {
+      width: 45%;
+      margin-bottom: 30px;
+    }
+  }
+  
+  /* Mobile devices (576px and down) */
+  @media (max-width: 576px) {
+    .Service-System-section{
+        padding: 10px 20px;
+    }
+    .Service-System-card {
+      width: 100%;
+      padding: 25px 20px;
+    }
+  
+    .Service-System-heading {
+      font-size: 28px;
+    }
+  
+    .Service-System-subheading {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+  
+    .Service-System-icon-wrapper {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .Service-System-icon {
+      font-size: 26px;
+    }
+  
+    .Service-System-title {
+      font-size: 18px;
+    }
+  
+    .Service-System-description {
+      font-size: 14px;
+    }
+  }
+  
+
+  /* Add this at the end of your CSS */
+
+/* Keyframes for floating animation */
+@keyframes floatEffect {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  /* Keyframes for pulse animation */
+  @keyframes pulseEffect {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Apply animations */
+  .Service-System-icon-wrapper {
+    animation: floatEffect 3s ease-in-out infinite;
+  }
+  
+  .Service-System-card:hover {
+    animation: pulseEffect 1.5s ease-in-out infinite;
+  }
+  
