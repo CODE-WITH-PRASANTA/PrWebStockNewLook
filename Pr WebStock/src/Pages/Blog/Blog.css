@@ -1,0 +1,140 @@
+/* Main section for the blog */
+.blog-section {
+    display: flex;
+    align-items: center;
+    background: url('../../assets/Contact-Bg.webp') no-repeat center center;
+    background-size: cover;
+    padding: 80px 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 0px 400px 0px;
+    border: 3px solid #1a365d;
+    margin-top: 30px;
+  }
+  
+  /* Content area */
+  .blog-content {
+    max-width: 50%;
+    color: #2b2b2b;
+    text-align: justify;
+    
+  }
+  
+  .blog-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1a365d; /* Deep blue */
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: capitalize;
+    line-height: 1.2;
+  }
+  
+  .blog-description {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 0.5px;
+    text-align: justify;
+  }
+  
+  /* Image container */
+  .blog-image-container {
+    display: flex;
+    justify-content: center;
+    max-width: 40%;
+  }
+  
+  .blog-image {
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* Add animations */
+.animate-slide-in-left {
+    animation: slide-in-left 1s ease-out;
+  }
+  
+  .animate-slide-in-right {
+    animation: slide-in-right 1s ease-out;
+  }
+  
+  @keyframes slide-in-left {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  /* Responsive Design */
+@media (max-width: 1024px) {
+    .blog-section {
+      flex-direction: column;
+      padding:70px 30px;
+      border-radius: 0px 0px 200px 0px;
+    }
+  
+    .blog-content {
+      max-width: 100%;
+      text-align: center;
+    }
+  
+    .blog-title {
+      font-size: 36px;
+    }
+  
+    .blog-description {
+      font-size: 16px;
+      text-align: justify;
+    }
+  
+    .blog-image-container {
+      max-width: 100%;
+      margin-top: 30px;
+      justify-content: center;
+    }
+  
+    .blog-image {
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .blog-section {
+      border-radius: 0px 0px 100px 0px;
+    }
+  
+    .blog-title {
+      font-size: 28px;
+    }
+  
+    .blog-description {
+        text-align: justify;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+  
+    .blog-image {
+      width: 90%;
+    }
+  }
+  

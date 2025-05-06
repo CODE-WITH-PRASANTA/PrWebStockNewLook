@@ -213,3 +213,34 @@
       }
     }
     
+    /* Tablet-friendly adjustments */
+@media (max-width: 900px) and (min-width: 769px) {
+  .quick-discussion-container {
+    padding: 18px;
+  }
+
+  .quick-content {
+    max-width: 55%;
+  }
+
+  .quick-content h1 {
+    font-size: 2.2em;
+  }
+
+  .quick-content p {
+    font-size: 1.1em;
+  }
+
+  .quick-contact-info {
+    gap: 12px;
+  }
+
+  .quick-contact-info .phone, .quick-contact-info .live-chat {
+    width: 55%;
+    height: 55px;
+  }
+
+  .robot-icon {
+    width: 250px;
+  }
+}

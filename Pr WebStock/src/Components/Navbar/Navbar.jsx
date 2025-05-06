@@ -45,8 +45,8 @@ Unit No. 32, 721</span></div>
             <li className="navbar-link-item"><Link to="/services">Services</Link></li>
             <li className="navbar-link-item"><Link to="/product">Product</Link></li>
             <li className="navbar-link-item"><Link to="/web-plan">Web Work</Link></li>
-            {/* <li className="navbar-link-item"><Link to="/carrier">Career</Link></li> */}
-            {/* <li className="navbar-link-item"><Link to="/blog">Blog</Link></li> */}
+            <li className="navbar-link-item"><Link to="/carrier">Career</Link></li>
+            <li className="navbar-link-item"><Link to="/blog">Blog</Link></li>
             <li className="navbar-link-item"><Link to="/contact">Contact Us</Link></li>
           </ul>
 
@@ -73,8 +73,8 @@ Unit No. 32, 721</span></div>
               <li><Link to="/services" onClick={() => setIsMobileMenuOpen(false)}>Services</Link></li>
               <li><Link to="/product" onClick={() => setIsMobileMenuOpen(false)}>Product</Link></li>
               <li><Link to="/web-plan" onClick={() => setIsMobileMenuOpen(false)}>Web Work</Link></li>
-              {/* <li><Link to="/carrier" onClick={() => setIsMobileMenuOpen(false)}>Career</Link></li> */}
-              {/* <li><Link to="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link></li> */}
+              <li><Link to="/carrier" onClick={() => setIsMobileMenuOpen(false)}>Career</Link></li>
+              <li><Link to="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link></li>
               <li><Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link></li>
             </ul>
 

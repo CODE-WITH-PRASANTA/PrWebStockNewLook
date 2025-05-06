@@ -264,3 +264,58 @@
     }
   }
   
+  /* iPad Mini specific (portrait and landscape) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .about-section{
+    border-radius: 200px 0px 200px 0px;
+  }
+  .about-container {
+    padding: 40px 25px;
+  }
+
+.about-text p{
+    text-align: center;
+  }
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .about-text {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .about-image {
+    margin-top: 30px;
+    max-width: 260px;
+    margin-left: 0;
+  }
+
+  .fl-about-img-content {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    border-radius: 20px;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .skills {
+    justify-content: center;
+  }
+
+  .box {
+    width: 90px;
+    height: 90px;
+  }
+
+  .box span {
+    font-size: 14px;
+    width: 50px;
+    height: 50px;
+  }
+}

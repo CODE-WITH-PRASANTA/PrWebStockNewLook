@@ -294,3 +294,33 @@
 .whychoose-feature-box:nth-child(4) {
   animation-delay: 0.10s;
 }
+
+/* Tablet-friendly adjustments */
+@media (max-width: 900px) and (min-width: 769px) {
+  .full-whychoose-container {
+    padding: 45px 4%;
+  }
+
+  .whychoose-content-left {
+    max-width: 48%;
+    padding-right: 20px;
+  }
+
+  .whychoose-content-right {
+    max-width: 50%;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .whychoose-heading-large {
+    font-size: 26px;
+  }
+
+  .whychoose-paragraph {
+    font-size: 14.5px;
+  }
+
+  .whychoose-feature-text {
+    font-size: 14px;
+  }
+}
