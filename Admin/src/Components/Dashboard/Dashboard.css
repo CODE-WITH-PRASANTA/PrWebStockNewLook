@@ -1,0 +1,124 @@
+.Dashboard-Section-Container {
+    padding: 2rem;
+    background-color: #f8f9fc;
+    min-height: 100vh;
+  }
+  
+  .Dashboard-Section-Title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+  }
+  
+  .Dashboard-Section-Grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .Dashboard-Section-Card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.4rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+  }
+  
+  .Dashboard-Section-Card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .Dashboard-Section-Icon {
+    margin-right: 1.2rem;
+  }
+  
+  .Dashboard-Section-Info h3 {
+    font-size: 1.1rem;
+    color: #5a5c69;
+    margin: 0;
+  }
+  
+  .Dashboard-Section-Info p {
+    margin-top: 0.4rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #4e73df;
+  }
+  
+  /* Reviews Section */
+  .Dashboard-Section-Reviews {
+    margin-top: 3rem;
+  }
+  
+  .Dashboard-Section-ReviewTitle {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+  }
+  
+  .Dashboard-Section-ReviewCard {
+    background: #ffffff;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #1cc88a;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  }
+  
+  .Dashboard-Section-ReviewHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .Dashboard-Section-ReviewHeader h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #34495e;
+  }
+  
+  .Dashboard-Section-ReviewHeader p {
+    margin: 2px 0 0;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+  }
+  
+  .Dashboard-Section-Rating {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #f1c40f;
+  }
+  
+  .Dashboard-Section-Rating span {
+    margin-left: 0.3rem;
+    font-size: 1.1rem;
+  }
+  
+  .Dashboard-Section-ReviewComment {
+    margin: 0.8rem 0;
+    font-size: 1rem;
+    color: #2d3436;
+  }
+  
+  .Dashboard-Section-DeleteBtn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .Dashboard-Section-DeleteBtn:hover {
+    background-color: #c0392b;
+  }
+  

@@ -1,0 +1,326 @@
+.whychoose-container {
+    background: linear-gradient(to right, #f4f9fc, #e3f2fd);
+    border-top: 2px solid #cce3f6;
+    border-bottom: 2px solid #cce3f6;
+    border-radius: 0px 0px 200px 0px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .full-whychoose-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 60px 8%;
+    max-width: 1600px;
+    margin: auto;
+  }
+  
+  /* LEFT CONTENT */
+  .whychoose-content-left {
+    flex: 1;
+    min-width: 300px;
+    max-width: 55%;
+    padding-right: 40px;
+  }
+  
+  .whychoose-heading-small {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #00509e;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  .whychoose-heading-large {
+    font-size: 32px;
+    font-weight: 800;
+    color: #002244;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  .whychoose-highlight {
+    color: #1976d2;
+  }
+  
+  .whychoose-underline {
+    width: 80px;
+    height: 3px;
+    background-color: #1976d2;
+    border: none;
+    margin: 10px 0 20px 0;
+    border-radius: 2px;
+  }
+  
+  .whychoose-paragraph {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+  
+  /* RIGHT CONTENT */
+  .whychoose-content-right {
+    flex: 1;
+    min-width: 250px;
+    max-width: 38%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .whychoose-feature-box {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 64, 128, 0.08);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e3f2fd;
+  }
+  
+  .whychoose-feature-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0, 64, 128, 0.15);
+  }
+  
+  .whychoose-feature-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    background-color: #1976d2;
+    border-radius: 0 0 100% 0;
+  }
+  
+  .whychoose-icon {
+    width: 60px;
+    height: auto;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+  
+  .whychoose-feature-text {
+    font-weight: 600;
+    color: #0a2942;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+  }
+  
+
+  /* RESPONSIVE DESIGN */
+@media (max-width: 1200px) {
+    .whychoose-container {
+      padding: 60px 5%;
+      border-radius: 0px 0px 150px 0px; /* Slightly adjusted border-radius for large screens */
+    }
+  
+    .full-whychoose-container {
+      padding: 50px 5%;
+    }
+  
+    .whychoose-content-left,
+    .whychoose-content-right {
+      max-width: 100%;
+    }
+  
+    .whychoose-content-right {
+      margin-top: 40px;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .whychoose-container {
+      padding: 50px 5%;
+      border-radius: 0px 0px 100px 0px; /* Adjusted for medium-sized screens */
+    }
+  
+    .full-whychoose-container {
+      padding: 40px 4%;
+    }
+  
+    .whychoose-content-left,
+    .whychoose-content-right {
+      max-width: 100%;
+    }
+  
+    .whychoose-heading-large {
+      font-size: 28px;
+    }
+  
+    .whychoose-paragraph {
+      font-size: 16px;
+    }
+  
+    .whychoose-content-right {
+      margin-top: 30px;
+      grid-template-columns: 1fr 1fr;
+    }
+  
+  
+  }
+  
+  @media (max-width: 768px) {
+    .whychoose-container {
+      padding: 40px 3%;
+      border-radius: 0px 0px 80px 0px; /* Slight rounding for smaller screens */
+    }
+  
+    .full-whychoose-container {
+      padding: 35px 3%;
+    }
+  
+    .whychoose-heading-large {
+      font-size: 24px;
+    }
+  
+    .whychoose-paragraph {
+      font-size: 15px;
+    }
+  
+    .whychoose-content-right {
+        display: grid;
+      margin-top: 20px;
+      grid-template-columns: repeat(2 , 1fr);
+    }
+  
+    .whychoose-feature-box {
+     width: 80%;
+    }
+  
+    .whychoose-feature-text {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .whychoose-container {
+      padding: 30px 2%;
+      border-radius: 0px 0px 60px 0px; /* More rounded borders on smaller screens */
+    }
+  
+    .full-whychoose-container {
+      padding: 25px 2%;
+    }
+  
+    .whychoose-heading-large {
+      font-size: 20px;
+    }
+  
+    .whychoose-paragraph {
+      font-size: 14px;
+    }
+  
+  
+    .whychoose-feature-text {
+      font-size: 13px;
+    }
+  
+    .whychoose-icon {
+      width: 50px;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .whychoose-container {
+      padding: 20px 1%;
+      border-radius: 0px 0px 50px 0px; /* Adjusted border-radius for very small screens */
+    }
+  
+    .full-whychoose-container {
+      padding: 15px 1%;
+    }
+  
+    .whychoose-heading-large {
+      font-size: 18px;
+    }
+  
+    .whychoose-paragraph {
+      font-size: 13px;
+    }
+  
+    .whychoose-feature-text {
+      font-size: 12px;
+    }
+  
+    .whychoose-icon {
+      width: 45px;
+      height: auto;
+    }
+  }
+  
+  /* Add animation to feature boxes */
+.whychoose-feature-box {
+  animation: whypulse 1.5s ease-in-out infinite;
+}
+
+@keyframes whypulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 6px 20px rgba(0, 64, 128, 0.08);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 64, 128, 0.15);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 6px 20px rgba(0, 64, 128, 0.08);
+  }
+}
+
+/* Optional: Add a delay to each feature box for a staggered effect */
+.whychoose-feature-box:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+.whychoose-feature-box:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.whychoose-feature-box:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.whychoose-feature-box:nth-child(4) {
+  animation-delay: 0.10s;
+}
+
+/* Tablet-friendly adjustments */
+@media (max-width: 900px) and (min-width: 769px) {
+  .full-whychoose-container {
+    padding: 45px 4%;
+  }
+
+  .whychoose-content-left {
+    max-width: 48%;
+    padding-right: 20px;
+  }
+
+  .whychoose-content-right {
+    max-width: 50%;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .whychoose-heading-large {
+    font-size: 26px;
+  }
+
+  .whychoose-paragraph {
+    font-size: 14.5px;
+  }
+
+  .whychoose-feature-text {
+    font-size: 14px;
+  }
+}

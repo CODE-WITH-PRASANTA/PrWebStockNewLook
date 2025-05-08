@@ -1,0 +1,198 @@
+/* NAVBAR */
+.Admin-Slider-Navbar {
+    height: 60px;
+    background-color: #f8fafc;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+  }
+  
+  .Admin-Slider-Logo {
+    height: 44px;
+    object-fit: contain;
+  }
+  
+  .Admin-Slider-MenuIcon {
+    cursor: pointer;
+    color: #1e293b;
+    z-index: 1101;
+  }
+  
+  /* WRAPPER FOR CONTENT */
+  .Admin-Slider-Wrapper {
+    display: flex;
+    transition: margin-left 0.3s ease;
+    margin-top: 60px;
+  }
+  
+  .Admin-Slider-Wrapper.slide {
+    margin-left: 260px;
+  }
+  
+  /* SIDEBAR */
+  .Admin-Slider-Sidebar {
+    position: fixed;
+    top: 60px;
+    left: -260px;
+    width: 260px;
+    height: calc(100vh - 60px);
+    background-color: #0f172a;
+    color: #ffffff;
+    transition: left 0.3s ease;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .Admin-Slider-Sidebar.open {
+    left: 0;
+  }
+  
+  .Admin-Slider-Top {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #1e293b;
+  }
+  
+  .Prwebstock-brand-name {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #e2e8f0;
+    letter-spacing: 2px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+  }
+  
+  /* SIDEBAR LIST */
+  .Admin-Slider-List {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+  
+  .Admin-Slider-Item {
+    padding: 1rem 1.8rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+    color: #cbd5e1;
+    border: 2px dashed white;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+  
+  .Admin-Slider-Item:hover {
+    background-color: #1e293b;
+    color: #38bdf8;
+    border-left: 4px solid #38bdf8;
+  }
+  
+  /* LOGOUT BUTTON */
+  .Admin-Slider-Logout {
+    padding: 1rem 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: #ffffff;
+    border-top: 1px solid #1e293b;
+    cursor: pointer;
+    background-color: #dc2626;
+    transition: background-color 0.3s ease;
+
+  }
+  
+  .Admin-Slider-Logout:hover {
+    background-color: #1e293b;
+    color: white;
+  }
+  
+  /* MAIN CONTENT */
+  .Admin-Slider-ContentArea {
+    flex-grow: 1;
+    padding: 2rem;
+    width: 100%;
+    transition: margin-left 0.3s ease;
+    background-color: #f9fafb;
+    min-height: 100vh;
+  }
+  
+  .Admin-Page-Content {
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+  }
+  
+  /* OVERLAY FOR MOBILE */
+  .Admin-Slider-Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+  }
+  
+  /* SCROLLBAR */
+  .Admin-Slider-Sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .Admin-Slider-Sidebar::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 3px;
+  }
+  
+  /* MEDIA QUERIES */
+  @media (max-width: 768px) {
+    .Admin-Slider-Wrapper.slide {
+      margin-left: 0;
+    }
+  
+    .Admin-Slider-Sidebar {
+      width: 220px;
+      left: -220px;
+    }
+  
+    .Admin-Slider-Sidebar.open {
+      left: 0;
+    }
+  
+    .Prwebstock-brand-name {
+      font-size: 1.3rem;
+    }
+  
+    .Admin-Slider-Item,
+    .Admin-Slider-Logout {
+      padding: 0.8rem 1.2rem;
+      font-size: 0.95rem;
+    }
+  
+    .Admin-Slider-Logo {
+      height: 36px;
+    }
+  
+    .Admin-Slider-MenuIcon {
+      margin-right: 5px;
+    }
+  
+    .Admin-Slider-ContentArea {
+      padding: 1rem;
+    }
+  }
+  

@@ -1,0 +1,216 @@
+.Product-Content-Page-service-card {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    max-width: 1280px;
+    margin: 30px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+
+  .Product-Content-Page-card-image {
+    flex: 1 1 300px;
+    max-width: 350px;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .Product-Content-Page-card-image img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    display: block;
+    border-radius: 8px;
+    border: 2px dashed #002c57;
+  }
+  
+  .Product-Content-Page-card-content {
+    flex: 2 1 400px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+  }
+  
+  .Product-Content-Page-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .Product-Content-Page-card-header h2 {
+    font-size: 24px;
+    color: #002c57;
+    margin: 0;
+    flex: 1;
+    line-height: 1.3;
+  }
+  
+  .Product-Content-Page-price-tag {
+    background-color: #e0f0ff;
+    color: #005599;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    white-space: nowrap;
+    transition: background 0.3s ease;
+  }
+  
+  .Product-Content-Page-card-content p {
+    text-align: justify;
+    font-size: 15.5px;
+    color: #333;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+  
+  .Product-Content-Page-card-info {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 0 0 1px rgba(200, 200, 200, 0.3), 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .Product-Content-Page-card-info td {
+    padding: 14px 18px;
+    font-size: 15px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.85);
+    transition: background-color 0.25s ease, transform 0.2s ease;
+    border-bottom: 1px solid rgba(220, 220, 220, 0.4);
+  }
+  
+  .Product-Content-Page-card-info tr:hover td {
+    background-color: rgba(230, 244, 255, 0.9);
+    transform: translateX(2px);
+    box-shadow: inset 2px 0 0 #0077cc;
+  }
+  
+  .Product-Content-Page-card-info tr:nth-child(even) td {
+    background-color: rgba(245, 245, 245, 0.9);
+  }
+  
+  .Product-Content-Page-interest-btn {
+    background: linear-gradient(to right, #002c57, #0066aa);
+    color: #ffffff;
+    padding: 13px 26px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    align-self: flex-start;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+  }
+  
+  .Product-Content-Page-interest-btn:hover {
+    background: linear-gradient(to right, #001d3d, #005d9c);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+
+  @media (max-width: 1024px) {
+    .Product-Content-Page-card-header h2 {
+      font-size: 22px;
+    }
+  
+    .Product-Content-Page-price-tag {
+      font-size: 15px;
+    }
+  
+    .Product-Content-Page-card-content {
+      padding: 28px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .Product-Content-Page-service-card {
+      flex-direction: column;
+      margin: 20px 15px;
+    }
+  
+    .Product-Content-Page-card-content {
+      padding: 20px;
+    }
+  
+    .Product-Content-Page-card-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .Product-Content-Page-card-header h2 {
+      font-size: 18px;
+    }
+  
+    .Product-Content-Page-price-tag {
+      font-size: 13px;
+      padding: 6px 12px;
+    }
+  
+    .Product-Content-Page-card-content p {
+      font-size: 14px;
+    }
+  
+    .Product-Content-Page-card-info td {
+      font-size: 14px;
+      padding: 12px 14px;
+    }
+  
+    .Product-Content-Page-interest-btn {
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Product-Content-Page-card-content {
+      padding: 18px;
+    }
+  
+    .Product-Content-Page-card-header h2 {
+      font-size: 16px;
+    }
+  
+    .Product-Content-Page-price-tag {
+      font-size: 12px;
+      padding: 5px 10px;
+    }
+  
+    .Product-Content-Page-card-content p {
+      font-size: 13.5px;
+    }
+  
+    .Product-Content-Page-card-info td {
+      font-size: 13px;
+      padding: 10px 12px;
+    }
+  
+    .Product-Content-Page-interest-btn {
+      padding: 11px 22px;
+      font-size: 13.5px;
+    }
+  }
+  
