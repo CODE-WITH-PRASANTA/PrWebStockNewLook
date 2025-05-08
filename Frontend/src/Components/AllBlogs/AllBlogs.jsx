@@ -1,54 +1,54 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './AllBlogs.css';
+import { Link } from "react-router-dom";
 
 // Assets
-import Blog1 from '../../assets/blog-1.webp';
-import Blog2 from '../../assets/blog-2.webp';
-import Blog3 from '../../assets/blog-3.webp';
 import ProfilePic from '../../assets/profile-pic.webp';
 
 // React Icons
 import { FaRegCommentDots } from 'react-icons/fa';
 
+// Import the API_URL
+import { API_URL } from '../../Api';
+
 const AllBlogs = () => {
-  const blogs = [
-    {
-      id: 1,
-      image: Blog1,
-      title: "Let’s understand the different types of data backups",
-      author: "Kevin Martin",
-      date: "20 MAY",
-    },
-    {
-      id: 2,
-      image: Blog2,
-      title: "Let’s understand the different types of data backups",
-      author: "Kevin Martin",
-      date: "20 MAY",
-    },
-    {
-      id: 3,
-      image: Blog3,
-      title: "Let’s understand the different types of data backups",
-      author: "Kevin Martin",
-      date: "20 MAY",
-    },
-  ];
+  const [blogs, setBlogs] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch(`${API_URL}/blogs/get-blogs`);
+        const data = await response.json();
+        setBlogs(data);
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+    fetchBlogs();
+  }, []);
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className="AllBlog-Container">
       {blogs.map((blog) => (
-        <div className="AllBlog-Card" key={blog.id}>
+        <div className="AllBlog-Card" key={blog._id}>
           <div className="AllBlog-ImageWrapper">
-            <img src={blog.image} alt="blog" className="AllBlog-Image" />
-            <span className="AllBlog-DateBadge">{blog.date}</span>
+            <img src={blog.imageUrl} alt="blog" className="AllBlog-Image" />
+            <span className="AllBlog-DateBadge">{new Date(blog.date).toLocaleDateString()}</span>
           </div>
           <div className="AllBlog-Content">
             <div className="AllBlog-Author">
               <img src={ProfilePic} alt="profile" className="AllBlog-ProfilePic" />
-              <span className="AllBlog-AuthorName">by {blog.author}</span>
+              <span className="AllBlog-AuthorName">By {blog.author}</span>
             </div>
-            <h3 className="AllBlog-Title">{blog.title}</h3>
+            <Link to={`/blogs/${blog._id}`} className="AllBlog-Link">
+              <h3 className="AllBlog-Title">{blog.title}</h3>
+            </Link>
+
             <div className="AllBlog-Footer">
               <div className="AllBlog-Comments">
                 <FaRegCommentDots className="AllBlog-CommentIcon" />

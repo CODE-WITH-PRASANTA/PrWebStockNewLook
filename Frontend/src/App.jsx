@@ -6,6 +6,7 @@ import { Suspense, lazy, useState, useEffect } from 'react';
 import { Atom } from 'react-loading-indicators';
 import Blog from './Pages/Blog/Blog';
 import CallIcon from './Components/CallIcon/CallIcon';
+import BlogDetails from './Components/BlogDetails/BlogDetails';
 
 // Lazy load pages
 const Home = lazy(() => import('./Pages/Home/Home'));
@@ -48,6 +49,7 @@ function App() {
           <Route path="/carrier" element={<Carrier />} />
           <Route path="/product" element={<Products />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blogs/:id" element={<BlogDetails />} />
         </Routes>
         <DownFooter />
         <CallIcon /> {/* <- Displayed on all pages */}
