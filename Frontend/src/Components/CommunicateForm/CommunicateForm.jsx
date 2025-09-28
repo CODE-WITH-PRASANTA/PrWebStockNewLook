@@ -53,7 +53,7 @@ const CommunicateForm = () => {
   </div>
   <div className="Communicate-Form-DetailItem">
     <FaWhatsapp className="Communicate-Form-Icon" />
-    <span>+91 7205995722 (WhatsApp)</span>
+    <span>+91 7789801327 (WhatsApp)</span>
   </div>
   {/* <div className="Communicate-Form-DetailItem">
     <FaTelegramPlane className="Communicate-Form-Icon" />

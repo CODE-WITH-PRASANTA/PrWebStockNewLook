@@ -27,6 +27,9 @@
   }
 
 
+  .navbar-contact-item a {
+    color: #fff;
+  }
   /* Left Section */
   .navbar-topbar-left {
     display: flex;

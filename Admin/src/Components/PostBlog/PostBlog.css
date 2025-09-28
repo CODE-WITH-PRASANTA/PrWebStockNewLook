@@ -1,215 +1,217 @@
+
 :root {
-    --main-color: #e94e77;
-    --light-pink: #fff0f5;
-    --input-bg: #fdf5f7;
-    --text-dark: #333;
-    --border-color: #ddd;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-  }
-  
+  --main-color: #e94e77;
+  --main-hover: #d63863;
+  --bg-light: #fafafa;
+  --input-bg: #fff;
+  --text-dark: #2c2c2c;
+  --text-muted: #666;
+  --border-color: #e5e5e5;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+  --transition: 0.3s ease;
+}
+
+/* Container */
+.Post-Blog-Container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: white;
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 25px var(--shadow-color);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  border-top: 5px solid var(--main-color);
+}
+
+/* Title */
+.Post-Blog-Title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--main-color);
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+}
+
+.Post-Blog-Title::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: var(--main-color);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 3px;
+}
+
+/* Form */
+.Post-Blog-Form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Section */
+.Post-Blog-Section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Two-column */
+.Post-Blog-Two-Column {
+  flex-direction: row;
+  gap: 20px;
+}
+
+.Post-Blog-Column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Labels */
+.Post-Blog-Label {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 15px;
+}
+
+/* Inputs */
+.Post-Blog-Input,
+.Post-Blog-Select,
+.Post-Blog-Textarea {
+  padding: 12px 14px;
+  font-size: 15px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  outline: none;
+  transition: var(--transition);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.Post-Blog-Input:focus,
+.Post-Blog-Select:focus,
+.Post-Blog-Textarea:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 3px #e94e7740;
+}
+
+/* Textarea */
+.Post-Blog-Textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Button */
+.Post-Blog-Button {
+  padding: 12px 20px;
+  background: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.Post-Blog-Button:hover {
+  background: var(--main-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(233, 78, 119, 0.3);
+}
+
+.Post-Blog-Submit {
+  width: 100%;
+  font-size: 18px;
+  padding: 14px;
+}
+
+/* Tags */
+.Post-Blog-Tag-Wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-light);
+}
+
+.Post-Blog-Tag {
+  background: var(--main-color);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(233, 78, 119, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.Post-Blog-Tag-Remove {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-left: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.Post-Blog-Tag-Remove:hover {
+  color: #ffe4ec;
+}
+
+.Post-Blog-Tags-Input {
+  border: none;
+  outline: none;
+  flex: 1;
+  min-width: 120px;
+  padding: 6px;
+  background: transparent;
+  font-size: 15px;
+}
+
+/* File Input */
+input[type="file"] {
+  padding: 10px;
+  background: #fff;
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+input[type="file"]:hover {
+  border-color: var(--main-color);
+  background: #fff7f9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
   .Post-Blog-Container {
-    border: 2px solid #d63863;
-    max-width: 900px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px 40px;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px var(--shadow-color);
-    font-family: 'Segoe UI', sans-serif;
+    padding: 25px;
   }
-  
-  .Post-Blog-Title {
-    text-align: center;
-    margin-bottom: 30px;
-    color: var(--main-color);
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .Post-Blog-Form {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-  
-  .Post-Blog-Section {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  
+
   .Post-Blog-Two-Column {
-    flex-direction: row;
-    gap: 20px;
+    flex-direction: column;
   }
-  
-  .Post-Blog-Label {
-    font-weight: 500;
-    color: var(--text-dark);
-    font-size: 14px;
-  }
-  
-  .Post-Blog-Input,
-  .Post-Blog-Select,
-  .Post-Blog-Textarea {
-    flex: 1;
-    padding: 12px;
-    font-size: 15px;
-    background-color: var(--input-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    outline: none;
-    transition: border 0.2s, box-shadow 0.2s;
-  }
-  
-  .Post-Blog-Input:focus,
-  .Post-Blog-Select:focus,
-  .Post-Blog-Textarea:focus {
-    border-color: var(--main-color);
-    box-shadow: 0 0 0 2px #e94e7755;
-  }
-  
-  .Post-Blog-Textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
-  
-  .Post-Blog-Button {
-    padding: 12px 18px;
-    background-color: var(--main-color);
-    color: white;
-    border: none;
-    border-radius: 10px;
+
+  .Post-Blog-Submit {
     font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    min-width: 140px;
   }
-  
-  .Post-Blog-Button:hover {
-    background-color: #d63863;
-  }
-  
-  .Post-Blog-Add-Category-Button {
-    margin-top: auto;
-    height: 45px;
-    align-self: flex-end;
-  }
-  
-  .Post-Blog-Submit-Button {
-    width: 100%;
-    padding: 12px;
-    font-size: 18px;
-  }
-  
-  .Post-Blog-Column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .Post-Blog-Section {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .Post-Blog-Content-Section {
-    padding: 10px 0;
-  }
-  
-  .Post-Blog-Label {
-    font-weight: 600;
-    color: var(--text-dark);
-    font-size: 15px;
-  }
-  
-  .Post-Blog-Tag-Input-Wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 6px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-  }
-  
-  .Post-Blog-Tag {
-    background-color: #e94e77;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-  }
-  
-  .Post-Blog-Tag-Remove {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 14px;
-    margin-left: 6px;
-    cursor: pointer;
-  }
-  
-  .Post-Blog-Tags-Input {
-    border: none;
-    outline: none;
-    flex: 1;
-    min-width: 100px;
-    padding: 4px;
-  }
-  
-  @media (max-width: 768px) {
-    .Post-Blog-Container {
-      margin: 20px auto;
-      padding: 20px;
-    }
-  
-    .Post-Blog-Two-Column {
-      flex-direction: column;
-      gap: 16px;
-    }
-  
-    .Post-Blog-Add-Category-Button {
-      align-self: stretch;
-      width: 100%;
-    }
-  
-    .Post-Blog-Submit-Button {
-      padding: 10px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .Post-Blog-Container {
-      margin: 10px auto;
-      padding: 10px;
-    }
-  
-    .Post-Blog-Title {
-      font-size: 24px;
-    }
-  
-    .Post-Blog-Label {
-      font-size: 14px;
-    }
-  
-    .Post-Blog-Input,
-    .Post-Blog-Select {
-      padding: 8px;
-      font-size: 14px;
-    }
-  
-    .Post-Blog-Button {
-      padding: 8px 12px;
-      font-size: 14px;
-    }
-  
-    .Post-Blog-Submit-Button {
-      padding: 8px;
-      font-size: 16px;
-    }
-  }
+}

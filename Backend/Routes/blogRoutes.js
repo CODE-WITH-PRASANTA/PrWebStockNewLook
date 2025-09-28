@@ -3,14 +3,15 @@ const router = express.Router();
 const upload = require("../MiddleWare/Multer");
 const {
   createBlog,
-  getAllBlogs,
-  getBlogById,
-  deleteBlog
+  getBlogs,
+  getLatestBlogs,
+  deleteBlog,
 } = require("../Controller/blogController");
 
-router.post("/post-blog", upload.single("image"), createBlog);
-router.get("/get-blogs", getAllBlogs);
-router.get("/get-blog/:id", getBlogById);
-router.delete("/delete-blog/:id", deleteBlog);
+// Routes
+router.post("/create", upload.single("image"), createBlog);
+router.get("/get-blogs", getBlogs);
+router.get("/get-latest-blogs", getLatestBlogs);
+router.delete("/delete/:id", deleteBlog);
 
 module.exports = router;

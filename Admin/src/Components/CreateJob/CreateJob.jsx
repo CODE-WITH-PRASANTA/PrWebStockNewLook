@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './CreateJob.css';
-import { API_URL } from '../../Api'; // Adjust path as needed
+import { API_URL } from '../../Api'; 
 
 const CreateJob = () => {
   const [job, setJob] = useState({

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import {
   FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn, FaInstagram,
-  FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaBars, FaTimes
+  FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaBars, FaTimes, FaWhatsapp
 } from 'react-icons/fa';
 import logo from '../../assets/Company-Logo.webp';
 import { Link } from 'react-router-dom';
@@ -10,26 +10,50 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // WhatsApp link with predefined message
-  const whatsAppLink = "https://wa.me/6372545244?text=Hey%2C%20I%20need%20a%20Website%20%2F%20Application";
+  // Contact and social links
+  const whatsAppLink = "https://wa.me/7789801327?text=Hello%20PR%20WEBSTOCK%2C%20I%20want%20a%20website%20or%20app%20development";
+  const phoneLink = "tel:+916372545244";
+  const linkedinLink = "https://www.linkedin.com/company/pr-webstock/";
+  const facebookLink = "https://www.facebook.com/share/1GLqw2NZpB/?mibextid=wwXIfr";
+  const instagramLink = "https://www.instagram.com/prwebstock?igsh=dDhmMHdtczd2ZGxx";
 
   return (
     <div className="navbar-container">
+
       {/* Topbar */}
       <div className="navbar-topbar">
         <div className="Topbar-Container">
+
           <div className="navbar-topbar-left">
-            <div className="navbar-contact-item"><FaPhoneAlt className="navbar-icon" /> <span>+91- 6372 545 244</span></div>
-            <div className="navbar-contact-item"><FaEnvelope className="navbar-icon" /> <span>prwebstock.com@gmail.com</span></div>
-            <div className="navbar-contact-item"><FaMapMarkerAlt className="navbar-icon" /> <span>Nexus Esplanade , Bhubaneswar Unit No. 32, 721</span></div>
+            <div className="navbar-contact-item">
+              <FaPhoneAlt className="navbar-icon" /> 
+              <a href={phoneLink}>+91-6372 545 244</a>
+            </div>
+            <div className="navbar-contact-item">
+              <FaEnvelope className="navbar-icon" /> 
+              <span>prwebstock.com@gmail.com</span>
+            </div>
+            <div className="navbar-contact-item">
+              <FaMapMarkerAlt className="navbar-icon" /> 
+              <span>Nexus Esplanade, Bhubaneswar Unit No. 32, 721</span>
+            </div>
           </div>
+
           <div className="navbar-topbar-right">
-            <div className="navbar-social-icon"><FaFacebookF /></div>
-            <div className="navbar-social-icon"><FaTwitter /></div>
-            <div className="navbar-social-icon"><FaYoutube /></div>
-            <div className="navbar-social-icon"><FaLinkedinIn /></div>
-            <div className="navbar-social-icon"><FaInstagram /></div>
+            <a href={facebookLink} target="_blank" rel="noopener noreferrer" className="navbar-social-icon">
+              <FaFacebookF />
+            </a>
+            <a href={linkedinLink} target="_blank" rel="noopener noreferrer" className="navbar-social-icon">
+              <FaLinkedinIn />
+            </a>
+            <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="navbar-social-icon">
+              <FaInstagram />
+            </a>
+            <a href={whatsAppLink} target="_blank" rel="noopener noreferrer" className="navbar-social-icon">
+              <FaWhatsapp />
+            </a>
           </div>
+
         </div>
       </div>
 
@@ -69,6 +93,7 @@ const Navbar = () => {
           <img src={logo} alt="Company Logo" className="mobile-logo" />
           <FaTimes className="close-icon" onClick={() => setIsMobileMenuOpen(false)} />
         </div>
+
         <ul className="mobile-menu-links">
           <li><Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
           <li><Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link></li>
@@ -84,6 +109,7 @@ const Navbar = () => {
           <button className="mobile-demo-btn">GET FREE DEMO</button>
         </a>
       </div>
+
     </div>
   );
 };

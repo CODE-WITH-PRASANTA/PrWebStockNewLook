@@ -29,7 +29,7 @@ const ContactFooter = () => {
 
             <div className="contact-footer-column">
               <h4 className="contact-footer-title">SAY HELLO</h4>
-              <a href="mailto:info@email.com">info@email.com</a>
+              <a href="mailto:info@email.com">prwebstock.com@gmail.com</a>
               <p>+91 63 72 54 52 44</p>
             </div>
           </div>

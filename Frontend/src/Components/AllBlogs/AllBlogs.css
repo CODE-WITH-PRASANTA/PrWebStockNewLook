@@ -1,217 +1,304 @@
-.AllBlog-Container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #f3f4f8, #ffffff);
-  }
-  
-  .AllBlog-Card {
-    width: 340px;
-    background: #ffffff;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    border: 1px solid #eaeaea;
-  }
-  
-  .AllBlog-Card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-  }
-  
-  .AllBlog-ImageWrapper {
-    position: relative;
-  }
-  
-  .AllBlog-Image {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-  }
-  
-  .AllBlog-DateBadge {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    background-color: #ff6b6b;
-    color: #fff;
-    font-size: 13px;
-    font-weight: bold;
-    padding: 6px 14px;
-    border-radius: 20px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-  
-  .AllBlog-Content {
-    padding: 24px;
-    background-color: #fff;
-  }
-  
-  .AllBlog-Author {
-    display: flex;
-    align-items: center;
-    margin-bottom: 14px;
-  }
-  
-  .AllBlog-ProfilePic {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-    border: 2px solid #7a3cff;
-  }
-  
-  .AllBlog-AuthorName {
-    font-size: 14px;
-    color: #666;
-    font-weight: 500;
-  }
-  
-  .AllBlog-Title {
-    font-size: 17px;
-    font-weight: 700;
-    color: #2b2b2b;
-    margin-bottom: 18px;
-    transition: color 0.3s ease;
-  }
-  
-  .AllBlog-Title:hover {
-    color: #7a3cff;
-    cursor: pointer;
-  }
-  
-  .AllBlog-Footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 2px dashed #beb9b9;
-    padding-top: 14px;
-  }
-  
-  .AllBlog-Comments {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #555;
-    transition: color 0.3s ease;
-  }
-  
-  .AllBlog-CommentIcon {
-    margin-right: 6px;
-    color: #7a3cff;
-    font-size: 16px;
-  }
-  
-  .AllBlog-More {
-    font-size: 14px;
-    background-color: #7a3cff;
-    color: white;
-    padding: 6px 14px;
-    border-radius: 6px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .AllBlog-More:hover {
-    background-color: #5e2dd8;
-  }
-  
+/* ==========================
+   All Blogs Section Styling
+   ========================== */
 
-  /* Responsive Design */
+.AllBlog-Container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f3f4f8, #ffffff);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Blog Card */
+.AllBlog-Card {
+  width: 340px;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  border: 1px solid #eaeaea;
+}
+
+.AllBlog-Card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Image */
+.AllBlog-ImageWrapper {
+  position: relative;
+}
+
+.AllBlog-Image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  transition: transform 0.4s ease;
+}
+
+.AllBlog-Card:hover .AllBlog-Image {
+  transform: scale(1.05);
+}
+
+/* Date Badge */
+.AllBlog-DateBadge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: linear-gradient(135deg, #ff6b6b, #ff3b3b);
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.5px;
+}
+
+/* Content */
+.AllBlog-Content {
+  padding: 24px;
+  background-color: #fff;
+}
+
+/* Author Info */
+.AllBlog-Author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.AllBlog-ProfilePic {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  border: 2px solid #7a3cff;
+  box-shadow: 0 3px 6px rgba(122, 60, 255, 0.2);
+}
+
+.AllBlog-AuthorName {
+  font-size: 14px;
+  color: #666;
+  font-weight: 600;
+}
+
+/* Title */
+.AllBlog-Title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2b2b2b;
+  margin-bottom: 14px;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.AllBlog-Title:hover {
+  color: #7a3cff;
+  cursor: pointer;
+}
+
+/* Description */
+.AllBlog-Description {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+/* Footer */
+.AllBlog-Footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px dashed #e0e0e0;
+  padding-top: 14px;
+}
+
+.AllBlog-Comments {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.AllBlog-Comments:hover {
+  color: #7a3cff;
+}
+
+.AllBlog-CommentIcon {
+  margin-right: 6px;
+  color: #7a3cff;
+  font-size: 16px;
+}
+
+/* Category Badge */
+.AllBlog-Category {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #7a3cff, #5e2dd8);
+  padding: 5px 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(122, 60, 255, 0.2);
+  letter-spacing: 0.3px;
+}
+
+/* More Button */
+.AllBlog-More {
+  font-size: 14px;
+  background: linear-gradient(135deg, #7a3cff, #5e2dd8);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.AllBlog-More:hover {
+  background: linear-gradient(135deg, #5e2dd8, #3d18a1);
+  box-shadow: 0 3px 10px rgba(94, 45, 216, 0.3);
+}
+
+/* Loading */
+.AllBlog-Loading {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #7a3cff;
+  padding: 60px 0;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+/* ==========================
+   Animations
+   ========================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* ==========================
+   Responsive Design
+   ========================== */
 
 /* Tablets and below (≤ 991px) */
 @media (max-width: 991px) {
-    .AllBlog-Container {
-      gap: 24px;
-      padding: 50px 16px;
-    }
-  
-    .AllBlog-Card {
-      width: 300px;
-    }
-  
-    .AllBlog-Title {
-      font-size: 16px;
-    }
-  
-    .AllBlog-Content {
-      padding: 20px;
-    }
-  
-    .AllBlog-DateBadge {
-      font-size: 12px;
-      padding: 5px 12px;
-    }
+  .AllBlog-Container {
+    gap: 24px;
+    padding: 50px 16px;
   }
-  
-  /* Small tablets and large phones (≤ 767px) */
-  @media (max-width: 767px) {
-    .AllBlog-Card {
-      width: 100%;
-      max-width: 100%;
-    }
-  
-    .AllBlog-Container {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-  
-    .AllBlog-Image {
-      height: 200px;
-    }
-  
-    .AllBlog-Title {
-      font-size: 15px;
-    }
-  
-    .AllBlog-ProfilePic {
-      width: 28px;
-      height: 28px;
-    }
-  
-    .AllBlog-More {
-      padding: 5px 12px;
-      font-size: 13px;
-    }
+
+  .AllBlog-Card {
+    width: 300px;
   }
-  
-  /* Mobile phones (≤ 480px) */
-  @media (max-width: 480px) {
-    .AllBlog-Card {
-      border-radius: 12px;
-    }
-  
-    .AllBlog-Image {
-      height: 180px;
-      border-radius: 12px 12px 0 0;
-    }
-  
-    .AllBlog-DateBadge {
-      font-size: 11px;
-      padding: 4px 10px;
-    }
-  
-    .AllBlog-Title {
-      font-size: 14px;
-    }
-  
-    .AllBlog-Comments span,
-    .AllBlog-More {
-      font-size: 12px;
-    }
-  
-    .AllBlog-More {
-      padding: 4px 10px;
-    }
+
+  .AllBlog-Title {
+    font-size: 16px;
   }
-  
+
+  .AllBlog-Content {
+    padding: 20px;
+  }
+
+  .AllBlog-DateBadge {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+}
+
+/* Small tablets and large phones (≤ 767px) */
+@media (max-width: 767px) {
+  .AllBlog-Card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .AllBlog-Container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .AllBlog-Image {
+    height: 200px;
+  }
+
+  .AllBlog-Title {
+    font-size: 15px;
+  }
+
+  .AllBlog-ProfilePic {
+    width: 30px;
+    height: 30px;
+  }
+
+  .AllBlog-More {
+    padding: 5px 12px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile phones (≤ 480px) */
+@media (max-width: 480px) {
+  .AllBlog-Card {
+    border-radius: 12px;
+  }
+
+  .AllBlog-Image {
+    height: 180px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .AllBlog-DateBadge {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .AllBlog-Title {
+    font-size: 14px;
+  }
+
+  .AllBlog-Description {
+    font-size: 13px;
+  }
+
+  .AllBlog-Comments span,
+  .AllBlog-More {
+    font-size: 12px;
+  }
+
+  .AllBlog-More {
+    padding: 4px 10px;
+  }
+}

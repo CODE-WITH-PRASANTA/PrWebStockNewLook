@@ -1,91 +1,86 @@
-const express = require("express");
-const router = express.Router();
+const Blog = require("../Model/Blog");
 const cloudinary = require("../Config/Cloudinary");
 const fs = require("fs");
-const Blog = require("../Model/Blog");
 
+// ✅ Create Blog
 exports.createBlog = async (req, res) => {
   try {
     const {
       title,
       description,
-      content,
+      quotes,
       author,
+      email,
       category,
+      content,
       tags,
-      postType,
-      highlight
     } = req.body;
 
-    if (!req.file) {
-      return res.status(400).json({ message: "Image is required" });
+    let imageUrl = "";
+    if (req.file) {
+      const upload = await cloudinary.uploader.upload(req.file.path, {
+        folder: "blogs",
+      });
+      imageUrl = upload.secure_url;
+      fs.unlinkSync(req.file.path); // delete temp file
     }
 
-    const result = await cloudinary.uploader.upload(req.file.path, {
-      folder: "blogs"
-    });
-
-    fs.unlinkSync(req.file.path); // Remove local file
-
-    const blog = new Blog({
+    const newBlog = new Blog({
       title,
       description,
-      content,
+      quotes,
       author,
+      email,
       category,
-      tags: tags ? JSON.parse(tags) : [],
-      imageUrl: result.secure_url,
-      postType,
-      highlight: highlight === "true"
+      content,
+      tags: tags ? tags.split(",") : [],
+      imageUrl,
     });
 
-    await blog.save();
-
-    res.status(201).json({ message: "Blog created successfully", blog });
+    await newBlog.save();
+    res.status(201).json({ success: true, blog: newBlog });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Something went wrong", error });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
-// Get all blogs
-exports.getAllBlogs = async (req, res) => {
+
+// ✅ Get All Blogs
+exports.getBlogs = async (req, res) => {
   try {
-    const blogs = await Blog.find().sort({ date: -1 });
-    res.status(200).json(blogs);
+    const blogs = await Blog.find().sort({ createdAt: -1 });
+    res.status(200).json({ success: true, blogs });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Failed to fetch blogs" });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 
-// Get blog by ID
-exports.getBlogById = async (req, res) => {
+// ✅ Get Latest 4 Blogs
+exports.getLatestBlogs = async (req, res) => {
+  try {
+    const blogs = await Blog.find().sort({ createdAt: -1 }).limit(4);
+    res.status(200).json({ success: true, blogs });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+// ✅ Delete Blog
+exports.deleteBlog = async (req, res) => {
   try {
     const blog = await Blog.findById(req.params.id);
     if (!blog) {
-      return res.status(404).json({ message: "Blog not found" });
-    }
-    res.status(200).json(blog);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Failed to fetch blog" });
-  }
-};
-
-// Delete blog
-exports.deleteBlog = async (req, res) => {
-  try {
-    const blog = await Blog.findByIdAndDelete(req.params.id);
-    if (!blog) {
-      return res.status(404).json({ message: "Blog not found" });
+      return res.status(404).json({ success: false, message: "Blog not found" });
     }
 
-    // Delete image from Cloudinary
-    await cloudinary.uploader.destroy(blog.imageUrl.split("/").pop().split(".")[0]);
+    // If image exists, delete from Cloudinary
+    if (blog.imageUrl) {
+      const publicId = blog.imageUrl.split("/").pop().split(".")[0];
+      await cloudinary.uploader.destroy(`blogs/${publicId}`);
+    }
 
-    res.status(200).json({ message: "Blog deleted successfully" });
+    await Blog.findByIdAndDelete(req.params.id);
+    res.status(200).json({ success: true, message: "Blog deleted successfully" });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Failed to delete blog" });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
