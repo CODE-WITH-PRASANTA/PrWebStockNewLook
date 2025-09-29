@@ -7,6 +7,8 @@ import { Atom } from 'react-loading-indicators';
 import Blog from './Pages/Blog/Blog';
 import CallIcon from './Components/CallIcon/CallIcon';
 import BlogDetails from './Components/BlogDetails/BlogDetails';
+import TermsAndConditionsContent from './Components/TermsAndConditionsContent/TermsAndConditionsContent';
+import TermandCondition from './Pages/TermandCondition/TermandCondition';
 
 // Lazy load pages
 const Home = lazy(() => import('./Pages/Home/Home'));
@@ -50,6 +52,7 @@ function App() {
           <Route path="/product" element={<Products />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blogs/:id" element={<BlogDetails />} />
+          <Route path="/privacypolicy" element={<TermandCondition />} />
         </Routes>
         <DownFooter />
         <CallIcon /> {/* <- Displayed on all pages */}

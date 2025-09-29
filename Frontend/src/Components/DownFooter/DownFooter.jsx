@@ -9,8 +9,8 @@ const DownFooter = () => {
         <div className="footer-top">
           <p className="company-name">© 2024 PR-WEBSTOCK. All Rights Reserved.</p>
           <p className="company-info">
-            <a href="#" className="footer-link">Privacy Policy</a> |
-            <a href="#" className="footer-link">Terms & Conditions</a>
+            <a href="/privacypolicy" className="footer-link">Privacy Policy</a> |
+            <a href="/privacypolicy" className="footer-link">Terms & Conditions</a>
           </p>
         </div>
 
