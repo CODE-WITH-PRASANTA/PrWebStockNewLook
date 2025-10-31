@@ -9,6 +9,10 @@ import CallIcon from './Components/CallIcon/CallIcon';
 import BlogDetails from './Components/BlogDetails/BlogDetails';
 import TermsAndConditionsContent from './Components/TermsAndConditionsContent/TermsAndConditionsContent';
 import TermandCondition from './Pages/TermandCondition/TermandCondition';
+import OurProjectsSection from './Pages/OurProjectsSection/OurProjectsSection';
+import Faq from './Pages/Faq/Faq';
+import BlogInfoHeader from './Components/BlogInfoHeader/BlogInfoHeader';
+import BlogInfo from './Pages/BlogInfo/BlogInfo';
 
 // Lazy load pages
 const Home = lazy(() => import('./Pages/Home/Home'));
@@ -50,7 +54,12 @@ function App() {
           <Route path="/services" element={<Service />} />
           <Route path="/carrier" element={<Carrier />} />
           <Route path="/product" element={<Products />} />
+          <Route path="/our-projects-section" element={<OurProjectsSection />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/faq" element={<Faq/>} />
+          <Route path="/blog-info" element={<BlogInfo/>} />
+
+
           <Route path="/blogs/:id" element={<BlogDetails />} />
           <Route path="/privacypolicy" element={<TermandCondition />} />
         </Routes>

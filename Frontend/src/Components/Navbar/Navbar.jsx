@@ -70,9 +70,12 @@ const Navbar = () => {
             <li className="navbar-link-item"><Link to="/services">Services</Link></li>
             <li className="navbar-link-item"><Link to="/product">Product</Link></li>
             <li className="navbar-link-item"><Link to="/web-plan">Web Work</Link></li>
+            <li className="navbar-link-item"><Link to="/our-projects-section">Our Projects</Link></li>
             <li className="navbar-link-item"><Link to="/carrier">Career</Link></li>
             <li className="navbar-link-item"><Link to="/blog">Blog</Link></li>
             <li className="navbar-link-item"><Link to="/contact">Contact Us</Link></li>
+            <li className="navbar-link-item"><Link to="/faq">Faq</Link></li>
+
           </ul>
 
           <div className="navbar-main-right">
@@ -102,7 +105,10 @@ const Navbar = () => {
           <li><Link to="/web-plan" onClick={() => setIsMobileMenuOpen(false)}>Web Work</Link></li>
           <li><Link to="/carrier" onClick={() => setIsMobileMenuOpen(false)}>Career</Link></li>
           <li><Link to="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link></li>
+          <li><Link to="/faq" onClick={() => setIsMobileMenuOpen(false)}>Faq</Link></li>
           <li><Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link></li>
+          <li><Link to="/our-projects-section" onClick={() => setIsMobileMenuOpen(false)}>Our Projects</Link></li>
+
         </ul>
 
         <a href={whatsAppLink} target="_blank" rel="noopener noreferrer">
@@ -114,4 +120,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar; 

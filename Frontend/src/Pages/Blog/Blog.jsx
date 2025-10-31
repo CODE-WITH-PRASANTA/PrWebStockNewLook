@@ -3,7 +3,7 @@ import './Blog.css';
 
 // Assets
 import RightSideBlog from '../../assets/blog-img.webp';
-import AllBlogs from '../../Components/AllBlogs/AllBlogs';
+import BlogCards from '../../Components/BlogCards/BlogCards';
 
 const Blog = () => {
   return (
@@ -22,7 +22,7 @@ const Blog = () => {
       </div>
     </div>
 
-    <AllBlogs />
+    <BlogCards/>
   </>
   );
 };
