@@ -1,0 +1,122 @@
+.postcarrier-wrapper {
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.postcarrier-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0b2239;
+  margin-bottom: 6px;
+}
+
+.postcarrier-purpose {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.postcarrier-form .postcarrier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.postcarrier-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.postcarrier-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.postcarrier-group input,
+.postcarrier-group select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.postcarrier-group input:focus,
+.postcarrier-group select:focus {
+  border-color: #007bff;
+}
+
+.postcarrier-btn {
+  background: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.postcarrier-btn:hover {
+  background: #0056b3;
+}
+
+/* Posted Jobs Section */
+.postcarrier-table-section {
+  margin-top: 40px;
+}
+
+.postcarrier-table-section h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #0b2239;
+}
+
+.postcarrier-nojobs {
+  color: #777;
+  font-size: 14px;
+}
+
+.postcarrier-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.postcarrier-table th,
+.postcarrier-table td {
+  border: 1px solid #ddd;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.postcarrier-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.postcarrier-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.postcarrier-delete {
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.postcarrier-delete:hover {
+  background: #b02a37;
+}

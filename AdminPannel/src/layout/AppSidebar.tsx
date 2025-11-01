@@ -10,7 +10,9 @@ import {
   PlugInIcon,
   BoxCubeIcon,
   HorizontaLDots,
+ 
 } from "../icons";
+
 import { useSidebar } from "../context/SidebarContext";
 import companylogo from "../Asserts/Logo.png";
 
@@ -24,31 +26,9 @@ type NavItem = {
 const navItems: NavItem[] = [
   { icon: <GridIcon />, name: "Dashboard", path: "/" },
 
-  {
-    icon: <BoxCubeIcon />,
-    name: "Visa Management",
-    subItems: [
-      { name: "Post Visa", path: "/visa/post-visa" },
-      { name: "Preview", path: "/visa/preview" },
-    ],
-  },
-  {
-    icon: <BoxCubeIcon />,
-    name: "Visa Notes",
-    subItems: [
-      { name: "Payment", path: "/visa-notes/payment" },
-      { name: "Delivered", path: "/visa-notes/delivered" },
-    ],
-  },
-  {
-    icon: <UserCircleIcon />,
-    name: "Client Enquiry",
-    subItems: [
-      { name: "Visa Clients", path: "/client/visa-clients" },
-      { name: "Study Abroad Clients", path: "/client/study-abroad" },
-      { name: "Intern Abroad Clients", path: "/client/intern-abroad" },
-    ],
-  },
+
+
+ 
   {
     icon: <TableIcon />,
     name: "Team Management",
@@ -57,6 +37,7 @@ const navItems: NavItem[] = [
       { name: "Preview", path: "/team/preview" },
     ],
   },
+
   {
     icon: <PageIcon />,
     name: "Testimonial",
@@ -73,31 +54,41 @@ const navItems: NavItem[] = [
       { name: "Preview", path: "/blog/preview" },
     ],
   },
+
+   {
+    icon: <ListIcon />,
+    name: "Product Management",
+    subItems: [
+      { name: "Create Product", path: "/Create/Product" },
+      { name: "Preview", path: "/Create/preview" },
+    ],
+  },
+
+
+    // ✅ NEW SECTION: PROJECT MANAGEMENT
   {
     icon: <BoxCubeIcon />,
-    name: "Manage Advertise",
+    name: "Project Management",
     subItems: [
-      { name: "Banner", path: "/advertise/banner" },
-      { name: "Post Milestone", path: "/advertise/post-milestone" },
-    ],
-  },
-  { icon: <PlugInIcon />, name: "Contact Management", path: "/contact/manage" },
-  { icon: <BoxCubeIcon />, name: "Media Upload", path: "/media/upload" },
-
-  {
-    icon: <TableIcon />,
-    name: "Country Manage",
-    subItems: [
-      { name: "Country", path: "/country/manage" },
-      { name: "Visa Type", path: "/country/visa-type" },
+      { name: "Create Project", path: "/create/project" },
+      { name: "View Projects", path: "/project/view" },
     ],
   },
 
+    // ✅ NEW SECTION: CARRIER MANAGEMENT
   {
     icon: <UserCircleIcon />,
-    name: "Our Successful Clients",
-    path: "/clients/successful",
+    name: "Carrier Management",
+    subItems: [
+      { name: "Post Carrier", path: "/carrier/post" },
+      { name: "Manage Projects", path: "/create/manage-projects" },
+
+    ],
   },
+
+ 
+  { icon: <PlugInIcon />, name: "Contact Management", path: "/contact/manage" },
+
 
   // ✅ NEW SECTION: FAQ MANAGEMENT
   {
