@@ -1,27 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 import "./CreateProduct.css";
 
-const CreateProduct = () => {
-  const [productData, setProductData] = useState({
+interface ProductData {
+  title: string;
+  description: string;
+  location: string;
+  type: string;
+  features: string[];
+  price: string;
+  image: File | null;
+}
+
+const CreateProduct: React.FC = () => {
+  const [productData, setProductData] = useState<ProductData>({
     title: "",
     description: "",
     location: "",
     type: "",
     features: [""],
     price: "",
-    image: "",
+    image: null,
   });
 
-  const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    if (name === "image") {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, files } = e.target as HTMLInputElement;
+    if (name === "image" && files) {
       setProductData({ ...productData, image: files[0] });
     } else {
       setProductData({ ...productData, [name]: value });
     }
   };
 
-  const handleFeatureChange = (index, value) => {
+  const handleFeatureChange = (index: number, value: string) => {
     const updatedFeatures = [...productData.features];
     updatedFeatures[index] = value;
     setProductData({ ...productData, features: updatedFeatures });
@@ -31,12 +41,12 @@ const CreateProduct = () => {
     setProductData({ ...productData, features: [...productData.features, ""] });
   };
 
-  const removeFeature = (index) => {
+  const removeFeature = (index: number) => {
     const updatedFeatures = productData.features.filter((_, i) => i !== index);
     setProductData({ ...productData, features: updatedFeatures });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Product Posted:", productData);
     alert("Product information submitted successfully!");
@@ -71,7 +81,7 @@ const CreateProduct = () => {
             value={productData.description}
             onChange={handleChange}
             placeholder="Write a short description"
-            rows="4"
+            rows={4}
             required
           ></textarea>
         </div>
@@ -113,9 +123,7 @@ const CreateProduct = () => {
               <input
                 type="text"
                 value={feature}
-                onChange={(e) =>
-                  handleFeatureChange(index, e.target.value)
-                }
+                onChange={(e) => handleFeatureChange(index, e.target.value)}
                 placeholder="Enter key feature"
                 required
               />

@@ -81,7 +81,7 @@ const navItems: NavItem[] = [
     name: "Carrier Management",
     subItems: [
       { name: "Post Carrier", path: "/carrier/post" },
-      { name: "Manage Projects", path: "/create/manage-projects" },
+      { name: "Preview", path: "/create/preview" },
 
     ],
   },

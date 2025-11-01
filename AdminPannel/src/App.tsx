@@ -24,6 +24,9 @@ import FaqPosting from "./DashboardPages/FaqPosting/FaqPosting";
 import AdvertizingBanner from "./DashboardPages/AdvertizingBanner/AdvertizingBanner";
 import CreateProject from "./DashboardPages/CreateProject/CreateProject";
 import ViewProject from "./DashboardPages/ViewProject/ViewProject";
+import CreateProduct from "./DashboardPages/CreateProduct/CreateProduct";
+import PostCarrier from "./DashboardPages/PostCarrier/PostCarrier";
+import PostTeamMemberPreview from "./DashboardPages/PostTeamMemberPreview/PostTeamMemberPreview";
 
 
 
@@ -56,7 +59,10 @@ export default function App() {
             {/* All DashBoard Pages , Routes Here!!!! */}
           <Route path="/country/manage" element={<PostCountry />} />
           <Route path="/country/visa-type" element={<VisaType />} />
+
           <Route path="/team/post-member" element={<PostTeamMember />} />
+          <Route path="/team/preview" element={<PostTeamMemberPreview/>} />
+
           <Route path="/contact/manage" element={<ContactManagemenet />} />
           <Route path="/visa/post-visa" element={<VisaPosting />} />
           <Route path="/visa/preview" element={<PreviewVisa />} />
@@ -66,7 +72,12 @@ export default function App() {
           <Route path="/faq/post-faq" element={<FaqPosting />} />
           <Route path="/advertise/banner" element={<AdvertizingBanner />} />
           <Route path="/create/project" element={<CreateProject />} />
-          <Route path="/create/manage-projects" element={<ViewProject />} />
+          <Route path="/project/view" element={<ViewProject />} />
+          <Route path="/create/product" element={<CreateProduct />} />
+          <Route path="/carrier/post" element={<PostCarrier />} />
+
+          
+
 
 
 

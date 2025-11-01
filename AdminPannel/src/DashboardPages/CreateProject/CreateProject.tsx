@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 import "./CreateProject.css";
 import {
   Upload,
@@ -10,20 +10,32 @@ import {
   Trash2,
 } from "lucide-react";
 
-const CreateProject = () => {
-  const [projectData, setProjectData] = useState({
+interface ProjectData {
+  image: File | string;
+  name: string;
+  url: string;
+  category: string;
+  published: boolean;
+}
+
+const CreateProject: React.FC = () => {
+  const [projectData, setProjectData] = useState<ProjectData>({
     image: "",
     name: "",
     url: "",
     category: "",
     published: false,
   });
-  const [previewURL, setPreviewURL] = useState("");
-  const [reviewMode, setReviewMode] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value, type, checked, files } = e.target;
-    if (type === "file" && files.length > 0) {
+  const [previewURL, setPreviewURL] = useState<string>("");
+  const [reviewMode, setReviewMode] = useState<boolean>(false);
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value, type, checked, files } = e.target as HTMLInputElement;
+
+    if (type === "file" && files && files.length > 0) {
       const file = files[0];
       setProjectData((prev) => ({ ...prev, image: file }));
       setPreviewURL(URL.createObjectURL(file));
@@ -35,7 +47,7 @@ const CreateProject = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Project Saved:", projectData);
     alert("Project saved successfully!");
