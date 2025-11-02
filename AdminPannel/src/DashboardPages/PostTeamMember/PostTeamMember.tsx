@@ -1,6 +1,7 @@
-import React, { useState, ChangeEvent, FormEvent, useContext } from "react";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 import "./PostTeamMember.css";
-import { useTheme } from "../../context/ThemeContext"; // theme context
+import { useTheme } from "../../context/ThemeContext";
+import PostTeamMemberPreview from "../PostTeamMemberPreview/PostTeamMemberPreview";
 
 interface TeamMember {
   id: number;
@@ -17,7 +18,7 @@ interface TeamMember {
 }
 
 const PostTeamMember: React.FC = () => {
-  const { theme } = useTheme(); // get current theme
+  const { theme } = useTheme();
   const [memberData, setMemberData] = useState<TeamMember>({
     id: 0,
     profilePicture: "",
@@ -33,10 +34,11 @@ const PostTeamMember: React.FC = () => {
   });
 
   const [tableData, setTableData] = useState<TeamMember[]>([]);
+  const [previewMember, setPreviewMember] = useState<TeamMember | null>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value, files } = e.target;
-    if (name === "profilePicture" && files) {
+    if (name === "profilePicture" && files && files.length > 0) {
       setMemberData({ ...memberData, profilePicture: URL.createObjectURL(files[0]) });
     } else {
       setMemberData({ ...memberData, [name]: value });
@@ -49,7 +51,6 @@ const PostTeamMember: React.FC = () => {
 
     const newEntry: TeamMember = { ...memberData, id: tableData.length + 1 };
     setTableData([...tableData, newEntry]);
-
     setMemberData({
       id: 0,
       profilePicture: "",
@@ -83,13 +84,11 @@ const PostTeamMember: React.FC = () => {
       <div className="PostTeamMember-form-section">
         <h2 className="PostTeamMember-heading">Add Team Member</h2>
         <form className="PostTeamMember-form" onSubmit={handleSubmit}>
-          {/* Profile */}
           <div className="PostTeamMember-box">
             <h4>Profile</h4>
             <input type="file" name="profilePicture" accept="image/*" onChange={handleChange} />
           </div>
 
-          {/* Name & Phone */}
           <div className="PostTeamMember-box-row">
             <div className="PostTeamMember-box-item">
               <label>Name</label>
@@ -114,7 +113,6 @@ const PostTeamMember: React.FC = () => {
             </div>
           </div>
 
-          {/* Email & Designation */}
           <div className="PostTeamMember-box-row">
             <div className="PostTeamMember-box-item">
               <label>Email</label>
@@ -138,7 +136,6 @@ const PostTeamMember: React.FC = () => {
             </div>
           </div>
 
-          {/* Experience */}
           <div className="PostTeamMember-box">
             <label>Experience</label>
             <input
@@ -150,7 +147,6 @@ const PostTeamMember: React.FC = () => {
             />
           </div>
 
-          {/* Social Media */}
           <div className="PostTeamMember-box">
             <h4>Social Media</h4>
             <div className="PostTeamMember-box-row">
@@ -245,7 +241,12 @@ const PostTeamMember: React.FC = () => {
                     <button onClick={() => handleDelete(item.id)} className="PostTeamMember-delete-btn">
                       Delete
                     </button>
-                    <button className="PostTeamMember-preview-btn">Preview</button>
+                    <button
+                      className="PostTeamMember-preview-btn"
+                      onClick={() => setPreviewMember(item)}
+                    >
+                      Preview
+                    </button>
                   </td>
                 </tr>
               ))}
@@ -253,6 +254,13 @@ const PostTeamMember: React.FC = () => {
           </table>
         </div>
       </div>
+
+      {previewMember && (
+        <PostTeamMemberPreview
+          member={previewMember}
+          onClose={() => setPreviewMember(null)}
+        />
+      )}
     </div>
   );
 };

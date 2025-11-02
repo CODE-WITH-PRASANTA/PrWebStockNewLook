@@ -30,8 +30,11 @@ const CreateProject: React.FC = () => {
   const [previewURL, setPreviewURL] = useState<string>("");
   const [reviewMode, setReviewMode] = useState<boolean>(false);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked, files } = e.target;
+  // ✅ Handle input changes
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value, type, checked, files } = e.target as HTMLInputElement;
 
     if (type === "file" && files && files.length > 0) {
       const file = files[0];
@@ -45,6 +48,7 @@ const CreateProject: React.FC = () => {
     }
   };
 
+  // ✅ Handle project submission
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Project Saved:", projectData);
@@ -52,6 +56,7 @@ const CreateProject: React.FC = () => {
     setReviewMode(true);
   };
 
+  // ✅ Handle project deletion
   const handleDelete = () => {
     if (window.confirm("Are you sure you want to delete this project?")) {
       setProjectData({
@@ -67,6 +72,7 @@ const CreateProject: React.FC = () => {
     }
   };
 
+  // ✅ Handle edit mode toggle
   const handleEdit = () => setReviewMode(false);
 
   return (
@@ -146,7 +152,7 @@ const CreateProject: React.FC = () => {
             />
           </div>
 
-          {/* Toggle */}
+          {/* Publish Toggle */}
           <div className="form-toggle">
             <label>Publish / Unpublish</label>
             <label className="switch">
@@ -196,7 +202,7 @@ const CreateProject: React.FC = () => {
               <p>
                 <strong>URL:</strong>{" "}
                 {projectData.url ? (
-                  <a href={projectData.url} target="_blank" rel="noreferrer">
+                  <a href={projectData.url} target="_blank" rel="noopener noreferrer">
                     {projectData.url}
                   </a>
                 ) : (

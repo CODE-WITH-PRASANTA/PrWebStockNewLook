@@ -1,9 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 import "./PostCarrier.css";
 
-const PostCarrier = () => {
-  const [jobs, setJobs] = useState([]);
-  const [formData, setFormData] = useState({
+interface JobFormData {
+  designation: string;
+  experience: string;
+  salary: string;
+  location: string;
+  type: string;
+  vacancies: string;
+  skills: string;
+  email: string;
+  whatsapp: string;
+}
+
+const PostCarrier: React.FC = () => {
+  const [jobs, setJobs] = useState<JobFormData[]>([]);
+  const [formData, setFormData] = useState<JobFormData>({
     designation: "",
     experience: "",
     salary: "",
@@ -15,18 +27,21 @@ const PostCarrier = () => {
     whatsapp: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     if (!formData.designation || !formData.email) {
       alert("Please fill all required fields!");
       return;
     }
+
     setJobs([...jobs, formData]);
+
     setFormData({
       designation: "",
       experience: "",
@@ -40,7 +55,7 @@ const PostCarrier = () => {
     });
   };
 
-  const handleDelete = (index) => {
+  const handleDelete = (index: number) => {
     const updated = jobs.filter((_, i) => i !== index);
     setJobs(updated);
   };

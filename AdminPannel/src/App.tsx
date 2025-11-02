@@ -23,6 +23,7 @@ import ClientAction from "./DashboardPages/ClientAction/ClientAction";
 import FaqPosting from "./DashboardPages/FaqPosting/FaqPosting";
 import AdvertizingBanner from "./DashboardPages/AdvertizingBanner/AdvertizingBanner";
 import ViewProject from "./DashboardPages/ViewProject/ViewProject";
+import PostTeamMemberPreview from "./DashboardPages/PostTeamMemberPreview/PostTeamMemberPreview";
 import CreateProject from "./DashboardPages/CreateProject/CreateProject";
 
 
@@ -56,7 +57,10 @@ export default function App() {
             {/* All DashBoard Pages , Routes Here!!!! */}
           <Route path="/country/manage" element={<PostCountry />} />
           <Route path="/country/visa-type" element={<VisaType />} />
+
           <Route path="/team/post-member" element={<PostTeamMember />} />
+          <Route path="/team/preview" element={<PostTeamMemberPreview />} />
+
           <Route path="/contact/manage" element={<ContactManagemenet />} />
           <Route path="/visa/post-visa" element={<VisaPosting />} />
           <Route path="/visa/preview" element={<PreviewVisa />} />
@@ -68,6 +72,11 @@ export default function App() {
           <Route path="/create/project" element={<CreateProject />} />
           <Route path="/create/manage-projects" element={<ViewProject />} />
 
+
+
+
+
+          
           </Route>
 
           {/* Auth Layout */}

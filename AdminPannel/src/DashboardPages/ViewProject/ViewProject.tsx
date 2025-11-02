@@ -31,14 +31,15 @@ const ViewProject: React.FC = () => {
     },
   ]);
 
+  // ✅ Handle project deletion
   const handleDelete = (id: number): void => {
-    if (window.confirm("Are you sure you want to delete this project?")) {
-      setProjects((prevProjects) =>
-        prevProjects.filter((project) => project.id !== id)
-      );
+    const confirmDelete = window.confirm("Are you sure you want to delete this project?");
+    if (confirmDelete) {
+      setProjects((prevProjects) => prevProjects.filter((project) => project.id !== id));
     }
   };
 
+  // ✅ Handle project editing (to be implemented later)
   const handleEdit = (id: number): void => {
     alert(`Edit functionality for Project ID ${id} coming soon!`);
   };
@@ -59,13 +60,15 @@ const ViewProject: React.FC = () => {
                 alt={project.name}
                 className="project-image"
               />
+
               <div className="project-content">
                 <h3 className="project-name">{project.name}</h3>
                 <p className="project-category">{project.category}</p>
+
                 <a
                   href={project.url}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="project-link"
                 >
                   <ExternalLink size={16} /> Visit Project
