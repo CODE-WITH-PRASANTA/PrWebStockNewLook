@@ -7,12 +7,12 @@ interface TeamMember {
   name: string;
   designation: string;
   experience: string;
-  instagram: string;
-  facebook: string;
-  twitter: string;
-  whatsapp: string;
-  phone: string;
-  email: string;
+  instagram?: string;
+  facebook?: string;
+  twitter?: string;
+  whatsapp?: string;
+  phone?: string;
+  email?: string;
 }
 
 interface PreviewProps {
@@ -26,9 +26,12 @@ const PostTeamMemberPreview: React.FC<PreviewProps> = ({ member, onClose }) => {
   return (
     <div className="preview-overlay">
       <div className="preview-card">
+        {/* Close Button */}
         <button className="preview-close" onClick={onClose}>
           ✕
         </button>
+
+        {/* Header Section */}
         <div className="preview-header">
           <img
             src={member.profilePicture || "https://via.placeholder.com/120"}
@@ -42,6 +45,7 @@ const PostTeamMemberPreview: React.FC<PreviewProps> = ({ member, onClose }) => {
           </div>
         </div>
 
+        {/* Contact Details */}
         <div className="preview-contact">
           <h4>Contact Details</h4>
           <p>
@@ -52,26 +56,31 @@ const PostTeamMemberPreview: React.FC<PreviewProps> = ({ member, onClose }) => {
           </p>
         </div>
 
+        {/* Social Links */}
         <div className="preview-social">
           <h4>Social Links</h4>
           <div className="social-links">
             {member.instagram && (
-              <a href={member.instagram} target="_blank" rel="noreferrer">
+              <a href={member.instagram} target="_blank" rel="noopener noreferrer">
                 Instagram
               </a>
             )}
             {member.facebook && (
-              <a href={member.facebook} target="_blank" rel="noreferrer">
+              <a href={member.facebook} target="_blank" rel="noopener noreferrer">
                 Facebook
               </a>
             )}
             {member.twitter && (
-              <a href={member.twitter} target="_blank" rel="noreferrer">
+              <a href={member.twitter} target="_blank" rel="noopener noreferrer">
                 Twitter
               </a>
             )}
             {member.whatsapp && (
-              <a href={`https://wa.me/${member.whatsapp}`} target="_blank" rel="noreferrer">
+              <a
+                href={`https://wa.me/${member.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 WhatsApp
               </a>
             )}
@@ -83,3 +92,4 @@ const PostTeamMemberPreview: React.FC<PreviewProps> = ({ member, onClose }) => {
 };
 
 export default PostTeamMemberPreview;
+ 
