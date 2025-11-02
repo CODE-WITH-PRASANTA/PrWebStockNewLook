@@ -49,7 +49,7 @@ const PostTeamMember: React.FC = () => {
     e.preventDefault();
     if (!memberData.name || !memberData.designation) return;
 
-    const newEntry: TeamMember = { ...memberData, id: tableData.length + 1 };
+    const newEntry: TeamMember = { ...memberData, id: Date.now() };
     setTableData([...tableData, newEntry]);
     setMemberData({
       id: 0,
@@ -80,7 +80,7 @@ const PostTeamMember: React.FC = () => {
 
   return (
     <div className={`PostTeamMember-container ${theme === "dark" ? "dark" : "light"}`}>
-      {/* Left Side: Form */}
+      {/* Left: Form */}
       <div className="PostTeamMember-form-section">
         <h2 className="PostTeamMember-heading">Add Team Member</h2>
         <form className="PostTeamMember-form" onSubmit={handleSubmit}>
@@ -197,7 +197,7 @@ const PostTeamMember: React.FC = () => {
         </form>
       </div>
 
-      {/* Right Side: Table */}
+      {/* Right: Table */}
       <div className="PostTeamMember-table-section">
         <h2 className="PostTeamMember-heading">Team Members List</h2>
         <div className="PostTeamMember-table-wrapper">
@@ -242,8 +242,8 @@ const PostTeamMember: React.FC = () => {
                       Delete
                     </button>
                     <button
-                      className="PostTeamMember-preview-btn"
                       onClick={() => setPreviewMember(item)}
+                      className="PostTeamMember-preview-btn"
                     >
                       Preview
                     </button>
@@ -255,6 +255,7 @@ const PostTeamMember: React.FC = () => {
         </div>
       </div>
 
+      {/* ✅ Modal Preview Section */}
       {previewMember && (
         <PostTeamMemberPreview
           member={previewMember}

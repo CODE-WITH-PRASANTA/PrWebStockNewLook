@@ -72,7 +72,6 @@ export default function App() {
           <Route path="/create/manage-projects" element={<ViewProject />} />
           <Route path="/team/preview" element={<PostTeamMemberPreview />} />
 
-
           </Route>
 
           {/* Auth Layout */}
