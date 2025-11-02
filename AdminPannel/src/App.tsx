@@ -27,6 +27,16 @@ import CreateProject from "./DashboardPages/CreateProject/CreateProject";
 import PostTeamMemberPreview from "./DashboardPages/PostTeamMemberPreview/PostTeamMemberPreview";
 import CreateProduct from "./DashboardPages/CreateProduct/CreateProduct";
 import PostCarrier from "./DashboardPages/PostCarrier/PostCarrier";
+import TeamMembers from "./DashboardPages/TeamMembers/TeamMembers";
+import PreviewTeamMember from "./DashboardPages/PreviewTeamMember/PreviewTeamMember";
+import ClientsDetailsWorks from "./DashboardPages/ClientsDetailsWorks/ClientsDetailsWorks";
+import ClientsDetailsWorksPreview from "./DashboardPages/ClientsDetailsWorksPreview/ClientsDetailsWorksPreview";
+import CreateService from "./DashboardPages/CreateService/CreateService";
+import PreviewServices from "./DashboardPages/PreviewServices/PreviewServices";
+import PreviewBlog from "./DashboardPages/PreviewBlog/PreviewBlog";
+import PreviewProduct from "./DashboardPages/PreviewProduct/PreviewProduct";
+import PreviewProject from "./DashboardPages/PreviewProject/PreviewProject";
+import PreviewCarrier from "./DashboardPages/PreviewCarrier/PreviewCarrier";
 
 
 
@@ -65,16 +75,49 @@ export default function App() {
           <Route path="/contact/manage" element={<ContactManagemenet />} />
           <Route path="/visa/post-visa" element={<VisaPosting />} />
           <Route path="/visa/preview" element={<PreviewVisa />} />
+
           <Route path="/blog/post" element={<BlogPosting />} />
+          <Route path="/blog/preview" element={<PreviewBlog />} />
+
+
           <Route path="/testimonial/post" element={<PostTestimonial />} />
           <Route path="/testimonial/client-action" element={<ClientAction />} />
           <Route path="/faq/post-faq" element={<FaqPosting />} />
           <Route path="/advertise/banner" element={<AdvertizingBanner />} />
           <Route path="/create/project" element={<CreateProject />} />
+          <Route path="/project/view" element={<PreviewProject />} />
+
+          
+        
           <Route path="/create/manage-projects" element={<ViewProject />} />
           <Route path="/team/preview" element={<PostTeamMemberPreview />} />
+
           <Route path="/Create/Product" element={<CreateProduct />} />
+          <Route path="/product/preview" element={<PreviewProduct />} />
+
+
+          
           <Route path="/carrier/post" element={<PostCarrier />} />
+          <Route path="/create/preview" element={<PreviewCarrier />} />
+          
+
+          <Route path="/team/members" element={<TeamMembers />} />
+          <Route path="/team/preview-Member" element={<PreviewTeamMember/>} />
+
+          <Route path="/clients/details-works" element={<ClientsDetailsWorks/>} />
+          <Route path="/clients/review" element={<ClientsDetailsWorksPreview/>} />
+
+
+          <Route path="/service/create" element={<CreateService/>} />
+          <Route path="/service/Preview" element={<PreviewServices/>} />
+
+
+
+
+
+          
+
+          
 
           </Route>
 

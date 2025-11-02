@@ -1,7 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import "./PostTeamMember.css";
 import { useTheme } from "../../context/ThemeContext";
-import PostTeamMemberPreview from "../PostTeamMemberPreview/PostTeamMemberPreview";
 
 interface TeamMember {
   id: number;
@@ -34,12 +33,14 @@ const PostTeamMember: React.FC = () => {
   });
 
   const [tableData, setTableData] = useState<TeamMember[]>([]);
-  const [previewMember, setPreviewMember] = useState<TeamMember | null>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value, files } = e.target;
     if (name === "profilePicture" && files && files.length > 0) {
-      setMemberData({ ...memberData, profilePicture: URL.createObjectURL(files[0]) });
+      setMemberData({
+        ...memberData,
+        profilePicture: URL.createObjectURL(files[0]),
+      });
     } else {
       setMemberData({ ...memberData, [name]: value });
     }
@@ -238,14 +239,11 @@ const PostTeamMember: React.FC = () => {
                     <button onClick={() => handleEdit(item.id)} className="PostTeamMember-edit-btn">
                       Edit
                     </button>
-                    <button onClick={() => handleDelete(item.id)} className="PostTeamMember-delete-btn">
-                      Delete
-                    </button>
                     <button
-                      onClick={() => setPreviewMember(item)}
-                      className="PostTeamMember-preview-btn"
+                      onClick={() => handleDelete(item.id)}
+                      className="PostTeamMember-delete-btn"
                     >
-                      Preview
+                      Delete
                     </button>
                   </td>
                 </tr>
@@ -254,14 +252,6 @@ const PostTeamMember: React.FC = () => {
           </table>
         </div>
       </div>
-
-      {/* ✅ Modal Preview Section */}
-      {previewMember && (
-        <PostTeamMemberPreview
-          member={previewMember}
-          onClose={() => setPreviewMember(null)}
-        />
-      )}
     </div>
   );
 };

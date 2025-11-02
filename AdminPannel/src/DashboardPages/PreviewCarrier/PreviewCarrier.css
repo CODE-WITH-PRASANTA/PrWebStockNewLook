@@ -1,0 +1,161 @@
+.previewcarrier-container {
+  width: 100%;
+  padding: 2rem 3%;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+.previewcarrier-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.previewcarrier-subtitle {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.previewcarrier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 1.5rem;
+}
+
+.previewcarrier-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1.2rem;
+  transition: all 0.3s ease;
+  border-top: 5px solid transparent;
+}
+
+.previewcarrier-card:hover {
+  transform: translateY(-5px);
+}
+
+.previewcarrier-card.published {
+  border-top-color: #22c55e;
+}
+
+.previewcarrier-card.unpublished {
+  border-top-color: #ef4444;
+}
+
+.previewcarrier-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.previewcarrier-card-header h3 {
+  font-size: 1.2rem;
+  color: #111;
+  margin: 0;
+}
+
+.status-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.status-published {
+  background: #22c55e;
+}
+
+.status-unpublished {
+  background: #ef4444;
+}
+
+.previewcarrier-type {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.2rem;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+
+.previewcarrier-info p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #333;
+  margin: 3px 0;
+}
+
+.previewcarrier-skills {
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.previewcarrier-contact {
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.8rem;
+}
+
+.previewcarrier-contact p {
+  margin: 4px 0;
+}
+
+.previewcarrier-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.previewcarrier-actions button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-edit {
+  background: #e7f9ee;
+  color: #16a34a;
+}
+
+.btn-edit:hover {
+  background: #d1f7db;
+}
+
+.btn-delete {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.btn-delete:hover {
+  background: #fecaca;
+}
+
+@media (max-width: 600px) {
+  .previewcarrier-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .previewcarrier-card {
+    padding: 1rem;
+  }
+
+  .previewcarrier-actions {
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,265 @@
+.clients-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 40px;
+  background: #f9fafc;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Left Side (Form Section) */
+.client-form-section {
+  flex: 1;
+  min-width: 300px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.client-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.client-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.client-form input[type="text"],
+.client-form input[type="date"],
+.client-form input[type="file"],
+.client-form textarea {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  width: 100%;
+}
+
+.submit-btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Right Side (Client List Section) */
+.client-list-section {
+  flex: 2;
+  min-width: 400px;
+}
+
+.client-list-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.client-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.client-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-4px);
+}
+
+.client-photo {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.client-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.client-info p {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.client-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  flex: 1;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: 0.3s;
+}
+
+.edit-btn {
+  background: #fbbf24;
+  color: #111;
+}
+
+.edit-btn:hover {
+  background: #f59e0b;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+.no-clients {
+  text-align: center;
+  color: #6b7280;
+  font-size: 15px;
+  grid-column: 1 / -1;
+}
+
+/* ======================= RESPONSIVE FIXES ======================= */
+
+/* For large tablets */
+@media (max-width: 1200px) {
+  .clients-container {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .client-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+/* For tablets and medium screens */
+@media (max-width: 900px) {
+  .clients-container {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .client-form-section,
+  .client-list-section {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .client-list-section {
+    margin-top: 20px;
+  }
+
+  .client-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  .client-title,
+  .client-list-title {
+    font-size: 20px;
+  }
+}
+
+/* For small tablets and large phones */
+@media (max-width: 700px) {
+  .clients-container {
+    padding: 20px;
+  }
+
+  .client-form-section {
+    padding: 20px;
+  }
+
+  .client-card {
+    padding: 15px;
+  }
+
+  .client-photo {
+    height: 140px;
+  }
+
+  .client-title,
+  .client-list-title {
+    font-size: 18px;
+  }
+}
+
+/* For small mobile screens */
+@media (max-width: 480px) {
+  .clients-container {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .client-form-section {
+    padding: 16px;
+  }
+
+  .client-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .client-card {
+    padding: 12px;
+  }
+
+  .client-photo {
+    height: 130px;
+  }
+
+  .client-info h3 {
+    font-size: 16px;
+  }
+
+  .client-info p {
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

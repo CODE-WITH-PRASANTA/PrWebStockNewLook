@@ -35,6 +35,17 @@ const navItems: NavItem[] = [
     ],
   },
 
+
+  {
+  icon: <PageIcon />,
+  name: "Our Team Management",
+  subItems: [
+    { name: "Team Members", path: "/team/members" },
+    { name: "Preview Team Member", path: "/team/preview-Member" },
+  ],
+},
+
+
   {
     icon: <PageIcon />,
     name: "Testimonial",
@@ -52,12 +63,36 @@ const navItems: NavItem[] = [
     ],
   },
 
+
+
+
+
+{
+  icon: <PageIcon />,
+  name: "Service Posting",
+  subItems: [
+    { name: "Create Service", path: "/service/create" },
+    { name: "Preview Services ", path: "/service/Preview" },
+  ],
+},
+
+
+{
+  icon: <PageIcon />,
+  name: "Clients Data Management",
+  subItems: [
+    { name: "Clients Details & Works", path: "/clients/details-works" },
+    { name: "Review", path: "/clients/review" },
+  ],
+},
+
+
    {
     icon: <ListIcon />,
     name: "Product Management",
     subItems: [
       { name: "Create Product", path: "/Create/Product" },
-      { name: "Preview", path: "/Create/preview" },
+      { name: "Preview", path: "/product/preview" },
     ],
   },
 

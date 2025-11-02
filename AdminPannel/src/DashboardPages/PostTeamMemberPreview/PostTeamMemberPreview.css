@@ -1,0 +1,98 @@
+.PostTeamMemberPreview-container {
+  background: #fff;
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  font-family: "Poppins", sans-serif;
+}
+
+.PostTeamMemberPreview-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.PostTeamMemberPreview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.PostTeamMemberPreview-card {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: 0.3s ease;
+  border-top: 4px solid #4caf50;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.PostTeamMemberPreview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+}
+
+.PostTeamMemberPreview-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  border: 3px solid #4caf50;
+}
+
+.PostTeamMemberPreview-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.3rem;
+}
+
+.PostTeamMemberPreview-role {
+  color: #4caf50;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.PostTeamMemberPreview-exp {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.PostTeamMemberPreview-contact p {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0.2rem 0;
+}
+
+.PostTeamMemberPreview-socials {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.PostTeamMemberPreview-socials a {
+  background: #4caf50;
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.PostTeamMemberPreview-socials a:hover {
+  background: #388e3c;
+}
+
+@media (max-width: 768px) {
+  .PostTeamMemberPreview-container {
+    padding: 1.5rem;
+  }
+}
