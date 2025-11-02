@@ -10,9 +10,6 @@ const BlogInfo = () => {
         <BlogInfoHeader/>
         <BlogPostSection/>
         <BlogLatestNews/>
-
-
-
     </div>
   )
 }

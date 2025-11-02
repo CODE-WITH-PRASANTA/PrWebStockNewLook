@@ -72,7 +72,7 @@ const Navbar = () => {
             <li className="navbar-link-item"><Link to="/web-plan">Web Work</Link></li>
             <li className="navbar-link-item"><Link to="/our-projects-section">Our Projects</Link></li>
             <li className="navbar-link-item"><Link to="/carrier">Career</Link></li>
-            <li className="navbar-link-item"><Link to="/blog">Blog</Link></li>
+            <li className="navbar-link-item"><Link to="/blogs">Blog</Link></li>
             <li className="navbar-link-item"><Link to="/contact">Contact Us</Link></li>
             <li className="navbar-link-item"><Link to="/faq">Faq</Link></li>
 

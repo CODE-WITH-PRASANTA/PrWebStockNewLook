@@ -1,12 +1,52 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../Carrier/Carrier.css';
 import CarrierBackground from '../../assets/CarrierBackground.webp';
 import Swal from 'sweetalert2';
-import { API_URL } from '../../Api'; // Adjust the path as needed
-
 
 const Carrier = () => {
-  const [jobs, setJobs] = useState([]);
+  // ✅ Dummy Job Data
+  const [jobs] = useState([
+    {
+      _id: 1,
+      jobPosition: "Frontend Developer",
+      experienceFrom: 1,
+      experienceTo: 3,
+      salaryFrom: 15000,
+      salaryTo: 30000,
+      jobType: "Developer",
+      vacancy: 2,
+      location: "Bhubaneswar, Odisha",
+      skillsRequired: "React.js, JavaScript (ES6+), HTML5, CSS3, REST API, Git",
+      whatsappNumber: "917205995722",
+    },
+    {
+      _id: 2,
+      jobPosition: "Backend Developer",
+      experienceFrom: 2,
+      experienceTo: 4,
+      salaryFrom: 20000,
+      salaryTo: 40000,
+      jobType: "Developer",
+      vacancy: 1,
+      location: "Remote / Hybrid",
+      skillsRequired: "Node.js, Express.js, MongoDB, JWT Authentication, REST API Design",
+      whatsappNumber: "917205995722",
+    },
+    {
+      _id: 3,
+      jobPosition: "Digital Marketing Executive",
+      experienceFrom: 0,
+      experienceTo: 2,
+      salaryFrom: 10000,
+      salaryTo: 20000,
+      jobType: "Marketing",
+      vacancy: 3,
+      location: "Cuttack, Odisha",
+      skillsRequired: "SEO, Google Ads, Social Media Marketing, Content Writing, Canva",
+      whatsappNumber: "917205995722",
+    },
+  ]);
+
   const [showForm, setShowForm] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
   const [formData, setFormData] = useState({
@@ -17,19 +57,6 @@ const Carrier = () => {
     qualification: '',
     resume: null,
   });
-
-  useEffect(() => {
-    const fetchJobs = async () => {
-      try {
-        const response = await fetch(`${API_URL}/jobs`);
-        const data = await response.json();
-        setJobs(data);
-      } catch (error) {
-        console.error('Error fetching jobs:', error);
-      }
-    };
-    fetchJobs();
-  }, []);
 
   const handleApplyClick = (job) => {
     setSelectedJob(job);
@@ -47,7 +74,7 @@ const Carrier = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-  
+
     Swal.fire({
       position: "top-end",
       icon: "success",
@@ -55,7 +82,7 @@ const Carrier = () => {
       showConfirmButton: false,
       timer: 1500
     });
-  
+
     setShowForm(false);
     setFormData({
       name: '',
@@ -66,25 +93,26 @@ const Carrier = () => {
       resume: null,
     });
   };
-  
 
   return (
     <>
+      {/* --- Header Section --- */}
       <div className="carrier-contact-wrapper">
         <div className="carrier-contact-container">
           <div className="carrier-contact-left">
-            <h2>Carrier</h2>
+            <h2>Career Opportunities</h2>
             <p>
-              We help companies to focus on core business by taking over complete responsibility.
-              We provide both black-box and white-box testing on demand.
+              Explore exciting opportunities with us!  
+              Join a growing team that values creativity, innovation, and technical excellence.
             </p>
           </div>
           <div className="carrier-contact-right carrier-animate-float">
-            <img src={CarrierBackground} alt="Contact Illustration" />
+            <img src={CarrierBackground} alt="Career Illustration" />
           </div>
         </div>
       </div>
 
+      {/* --- Job Cards --- */}
       {jobs.map((job) => (
         <div key={job._id} className="Carrier-card">
           <div className="Carrier-card-header">
@@ -99,7 +127,15 @@ const Carrier = () => {
               <tbody>
                 <tr>
                   <th>Salary Range</th>
-                  <td>₹{job.salaryFrom} – ₹{job.salaryTo}/month<br/><small>+ {job.jobType === 'Sales' ? 'Incentives on Sales Per Lead Count' : 'Bonuses'}</small></td>
+                  <td>
+                    ₹{job.salaryFrom} – ₹{job.salaryTo}/month
+                    <br />
+                    <small>
+                      + {job.jobType === 'Sales'
+                        ? 'Incentives on Sales Per Lead Count'
+                        : 'Performance Bonuses'}
+                    </small>
+                  </td>
                   <th>Location</th>
                   <td>{job.location}</td>
                 </tr>
@@ -111,24 +147,27 @@ const Carrier = () => {
                 </tr>
                 <tr>
                   <th>Skills Required</th>
-                  <td colSpan="3">
-                    {job.skillsRequired}
-                  </td>
+                  <td colSpan="3">{job.skillsRequired}</td>
                 </tr>
               </tbody>
             </table>
 
             <div className="Carrier-actions">
-              <a 
-                href={`https://wa.me/${job.whatsappNumber}?text=${encodeURIComponent(`Hi, I am interested in this role: ${job.jobPosition}.`)}`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={`https://wa.me/${job.whatsappNumber}?text=${encodeURIComponent(
+                  `Hi, I am interested in this role: ${job.jobPosition}.`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="Carrier-btn whatsapp"
               >
-                <i className="fab fa-whatsapp"></i> Whatsapp
+                <i className="fab fa-whatsapp"></i> WhatsApp
               </a>
               <div className="Carrier-spacer" />
-              <button onClick={() => handleApplyClick(job)} className="Carrier-btn apply">
+              <button
+                onClick={() => handleApplyClick(job)}
+                className="Carrier-btn apply"
+              >
                 <i className="fas fa-paper-plane"></i> Apply Now
               </button>
             </div>
@@ -136,34 +175,78 @@ const Carrier = () => {
         </div>
       ))}
 
-{showForm && (
-  <div className="Carrier-modal-overlay">
-    <div className="Carrier-modal">
-      <h3>Apply for {selectedJob?.jobPosition}</h3>
-      <form onSubmit={handleSubmit} className="Carrier-form-grid">
-        <div className="Carrier-form-row">
-          <input type="text" name="name" placeholder="Enter Name" required onChange={handleChange} />
-          <input type="email" name="email" placeholder="Enter Email" required onChange={handleChange} />
+      {/* --- Apply Form Modal --- */}
+      {showForm && (
+        <div className="Carrier-modal-overlay">
+          <div className="Carrier-modal">
+            <h3>Apply for {selectedJob?.jobPosition}</h3>
+            <form onSubmit={handleSubmit} className="Carrier-form-grid">
+              <div className="Carrier-form-row">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter Name"
+                  required
+                  onChange={handleChange}
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter Email"
+                  required
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="Carrier-form-row">
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Enter Phone Number"
+                  required
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  name="location"
+                  placeholder="Enter Location"
+                  required
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="Carrier-form-row single">
+                <input
+                  type="text"
+                  name="qualification"
+                  placeholder="Enter Qualification"
+                  required
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="Carrier-form-row single">
+                <input
+                  type="file"
+                  name="resume"
+                  accept=".pdf,.doc,.docx"
+                  required
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="Carrier-modal-actions">
+                <button type="submit" className="Carrier-btn submit">
+                  Submit
+                </button>
+                <button
+                  type="button"
+                  className="Carrier-btn cancel"
+                  onClick={() => setShowForm(false)}
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-        <div className="Carrier-form-row">
-          <input type="tel" name="phone" placeholder="Enter Phone Number" required onChange={handleChange} />
-          <input type="text" name="location" placeholder="Enter Location" required onChange={handleChange} />
-        </div>
-        <div className="Carrier-form-row single">
-          <input type="text" name="qualification" placeholder="Enter Qualification" required onChange={handleChange} />
-        </div>
-        <div className="Carrier-form-row single">
-          <input type="file" name="resume" accept=".pdf,.doc,.docx" required onChange={handleChange} />
-        </div>
-        <div className="Carrier-modal-actions">
-          <button type="submit" className="Carrier-btn submit">Submit</button>
-          <button type="button" className="Carrier-btn cancel" onClick={() => setShowForm(false)}>Cancel</button>
-        </div>
-      </form>
-    </div>
-  </div>
-)}
-
+      )}
     </>
   );
 };

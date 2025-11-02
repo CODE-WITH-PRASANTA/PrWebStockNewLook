@@ -1,73 +1,100 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import "./BlogDetails.css";
 import { FaUser, FaCalendarAlt, FaSearch, FaArrowRight, FaTags } from "react-icons/fa";
 import BlogDetailsTop from "../BlogDetailsTop/BlogDetailsTop";
-import { API_URL } from "../../Api"; 
 
-const BlogDetails = ({ blogId }) => {
-  const [blog, setBlog] = useState(null);
-  const [recentBlogs, setRecentBlogs] = useState([]);
-  const [tags, setTags] = useState([]);
-
-  // Fetch single blog by ID
-  const fetchBlog = async () => {
-    try {
-      const res = await axios.get(`${API_URL}/blogs/get-blogs`);
-      const allBlogs = res.data.blogs;
-      const currentBlog = allBlogs.find(b => b._id === blogId) || allBlogs[0]; // fallback first blog
-      setBlog(currentBlog);
-
-      // Collect all unique tags
-      const allTags = new Set();
-      allBlogs.forEach(b => b.tags.forEach(t => allTags.add(t)));
-      setTags(Array.from(allTags));
-    } catch (error) {
-      console.log(error);
-    }
+const BlogDetails = () => {
+  // Dummy blog data
+  const dummyBlog = {
+    _id: "1",
+    title: "The Future of Web Development in 2025",
+    author: "Prasant Kumar Khuntia",
+    createdAt: "2025-10-20T12:00:00Z",
+    imageUrl: "https://via.placeholder.com/800x400",
+    description:
+      "Web development is rapidly evolving with new technologies, frameworks, and tools emerging every day.",
+    quotes: "The web is not just technology, it’s imagination turned into experience.",
+    content: `
+      <p>The future of web development looks bright, with innovations in AI-driven coding assistants, 
+      advanced frameworks, and performance optimization tools. React and Node.js remain leading choices 
+      for scalable applications.</p>
+      <p>Developers now focus more on accessibility, speed, and seamless user experience across devices.</p>
+    `,
+    tags: ["WebDev", "React", "JavaScript", "Frontend"],
   };
 
-  // Fetch latest 4 blogs
-  const fetchRecentBlogs = async () => {
-    try {
-      const res = await axios.get(`${API_URL}/blogs/get-latest-blogs`);
-      setRecentBlogs(res.data.blogs);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // Dummy recent blogs
+  const dummyRecentBlogs = [
+    {
+      _id: "2",
+      title: "Mastering React Hooks in 2025",
+      createdAt: "2025-10-15T10:00:00Z",
+      imageUrl: "https://via.placeholder.com/100x80",
+    },
+    {
+      _id: "3",
+      title: "Node.js API Optimization Tips",
+      createdAt: "2025-10-10T09:00:00Z",
+      imageUrl: "https://via.placeholder.com/100x80",
+    },
+    {
+      _id: "4",
+      title: "Top 10 VS Code Extensions for Developers",
+      createdAt: "2025-09-25T08:00:00Z",
+      imageUrl: "https://via.placeholder.com/100x80",
+    },
+    {
+      _id: "5",
+      title: "Why TypeScript is Taking Over JavaScript",
+      createdAt: "2025-09-15T07:00:00Z",
+      imageUrl: "https://via.placeholder.com/100x80",
+    },
+  ];
+
+  // Dummy tags
+  const dummyTags = ["React", "NodeJS", "WebDev", "UIUX", "Coding", "Frontend"];
+
+  const [blog, setBlog] = useState(dummyBlog);
+  const [recentBlogs, setRecentBlogs] = useState(dummyRecentBlogs);
+  const [tags, setTags] = useState(dummyTags);
 
   useEffect(() => {
-    fetchBlog();
-    fetchRecentBlogs();
-  }, [blogId]);
-
-  if (!blog) return <p>Loading...</p>;
+    // Normally fetch logic here, but now using dummy data
+    setBlog(dummyBlog);
+    setRecentBlogs(dummyRecentBlogs);
+    setTags(dummyTags);
+  }, []);
 
   return (
     <>
       <BlogDetailsTop />
       <div className="Blog-Details-container">
         <div className="Blog-Details-content-wrapper">
-
           {/* Left Side: Blog Post */}
           <div className="Blog-Details-left">
             <div className="Blog-Details-post">
               <img src={blog.imageUrl} alt="Blog Cover" className="Blog-Details-image" />
               <div className="Blog-Details-meta">
                 <span className="author-meta"><FaUser /> By {blog.author}</span>
-                <span className="date-meta"><FaCalendarAlt /> {new Date(blog.createdAt).toLocaleDateString()}</span>
+                <span className="date-meta">
+                  <FaCalendarAlt /> {new Date(blog.createdAt).toLocaleDateString()}
+                </span>
               </div>
 
               <h2 className="Blog-Details-title">{blog.title}</h2>
               <p className="Blog-Details-description">{blog.description}</p>
               {blog.quotes && <blockquote className="Blog-Details-quote">"{blog.quotes}"</blockquote>}
-              <div dangerouslySetInnerHTML={{ __html: blog.content }} className="Blog-Details-html" />
+              <div
+                dangerouslySetInnerHTML={{ __html: blog.content }}
+                className="Blog-Details-html"
+              />
 
               <div className="Blog-Details-tags">
                 <strong><FaTags /> Tags:</strong>
-                {blog.tags.map(tag => (
-                  <span key={tag} className="Blog-Details-tag">#{tag}</span>
+                {blog.tags.map((tag) => (
+                  <span key={tag} className="Blog-Details-tag">
+                    #{tag}
+                  </span>
                 ))}
               </div>
 
@@ -87,7 +114,9 @@ const BlogDetails = ({ blogId }) => {
                   <div className="Blog-Details-form-row">
                     <textarea placeholder="Type your message"></textarea>
                   </div>
-                  <button type="submit" className="Blog-Details-btn">Post Comment</button>
+                  <button type="submit" className="Blog-Details-btn">
+                    Post Comment
+                  </button>
                 </form>
               </div>
             </div>
@@ -95,7 +124,6 @@ const BlogDetails = ({ blogId }) => {
 
           {/* Right Side: Sidebar */}
           <div className="Blog-Details-right">
-
             {/* Search Widget */}
             <div className="Blog-Details-widget search">
               <h3><FaSearch /> Search</h3>
@@ -115,8 +143,8 @@ const BlogDetails = ({ blogId }) => {
                   "UI/UX Design",
                   "Business Strategy",
                   "Email Marketing",
-                  "SEO Marketing"
-                ].map(service => (
+                  "SEO Marketing",
+                ].map((service) => (
                   <div className="Blog-Details-service-item" key={service}>
                     {service} <FaArrowRight />
                   </div>
@@ -128,12 +156,14 @@ const BlogDetails = ({ blogId }) => {
             <div className="Blog-Details-widget recent-posts">
               <h3>Recent Posts</h3>
               <div className="Blog-Details-recent-list">
-                {recentBlogs.map(blog => (
+                {recentBlogs.map((blog) => (
                   <div key={blog._id} className="Blog-Details-recent-item">
                     <img src={blog.imageUrl} alt="Recent Post" />
                     <div className="Blog-Details-recent-text">
                       <span className="title">{blog.title}</span>
-                      <span className="date">{new Date(blog.createdAt).toLocaleDateString()}</span>
+                      <span className="date">
+                        {new Date(blog.createdAt).toLocaleDateString()}
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -144,12 +174,11 @@ const BlogDetails = ({ blogId }) => {
             <div className="Blog-Details-widget tags">
               <h3><FaTags /> Tags</h3>
               <div className="Blog-Details-tag-list">
-                {tags.map(tag => (
+                {tags.map((tag) => (
                   <span key={tag}>#{tag}</span>
                 ))}
               </div>
             </div>
-
           </div>
         </div>
       </div>

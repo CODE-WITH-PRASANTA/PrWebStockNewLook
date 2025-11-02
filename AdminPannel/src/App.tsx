@@ -25,6 +25,8 @@ import AdvertizingBanner from "./DashboardPages/AdvertizingBanner/AdvertizingBan
 import ViewProject from "./DashboardPages/ViewProject/ViewProject";
 import CreateProject from "./DashboardPages/CreateProject/CreateProject";
 import PostTeamMemberPreview from "./DashboardPages/PostTeamMemberPreview/PostTeamMemberPreview";
+import CreateProduct from "./DashboardPages/CreateProduct/CreateProduct";
+import PostCarrier from "./DashboardPages/PostCarrier/PostCarrier";
 
 
 
@@ -71,6 +73,8 @@ export default function App() {
           <Route path="/create/project" element={<CreateProject />} />
           <Route path="/create/manage-projects" element={<ViewProject />} />
           <Route path="/team/preview" element={<PostTeamMemberPreview />} />
+          <Route path="/Create/Product" element={<CreateProduct />} />
+          <Route path="/carrier/post" element={<PostCarrier />} />
 
           </Route>
 

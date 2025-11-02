@@ -55,10 +55,9 @@ function App() {
           <Route path="/carrier" element={<Carrier />} />
           <Route path="/product" element={<Products />} />
           <Route path="/our-projects-section" element={<OurProjectsSection />} />
-          <Route path="/blog" element={<Blog />} />
           <Route path="/faq" element={<Faq/>} />
-          <Route path="/blog-info" element={<BlogInfo/>} />
-
+         <Route path="/blogs" element={<Blog />} />
+        <Route path="/blog-info/:id" element={<BlogInfo />} />
 
           <Route path="/blogs/:id" element={<BlogDetails />} />
           <Route path="/privacypolicy" element={<TermandCondition />} />

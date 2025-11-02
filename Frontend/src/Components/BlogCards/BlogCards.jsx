@@ -1,11 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./BlogCards.css";
 import { ArrowUpRight, CalendarDays } from "lucide-react";
 
 import blogImg1 from "../../assets/blog-img-1.webp";
 import blogImg2 from "../../assets/blog-img-2.webp";
 import blogImg3 from "../../assets/blog-img-3.webp";
-
 import blogAvatar1 from "../../assets/blog-avatar-1.webp";
 
 /* ================== BLOG CARDS DATA ================== */
@@ -62,9 +62,14 @@ const newsData = [
 ];
 
 const BlogCards = () => {
+  const navigate = useNavigate();
+
+  const handleReadMore = (id) => {
+    navigate(`/blog-info/${id}`);
+  };
+
   return (
     <div className="blogcards-wrapper">
-
       {/* ================= TOP BLOG CARDS SECTION ================= */}
       <section className="blogcards-section">
         <div className="blogcards-container">
@@ -97,7 +102,10 @@ const BlogCards = () => {
                 <div className="blogcards-line"></div>
                 <p className="blogcards-desc">{blog.desc}</p>
 
-                <button className="blogcards-btn">
+                <button
+                  className="blogcards-btn"
+                  onClick={() => handleReadMore(blog.id)}
+                >
                   Read More <ArrowUpRight size={16} />
                 </button>
               </div>
@@ -123,11 +131,15 @@ const BlogCards = () => {
             <span className="news-line"></span>
             <p className="news-text">{item.desc}</p>
 
-            <button className="news-btn">Read More</button>
+            <button
+              className="news-btn"
+              onClick={() => handleReadMore(item.id)}
+            >
+              Read More
+            </button>
           </div>
         ))}
       </section>
-
     </div>
   );
 };
