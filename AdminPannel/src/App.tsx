@@ -22,8 +22,8 @@ import PostTestimonial from "./DashboardPages/PostTestimonial/PostTestimonial";
 import ClientAction from "./DashboardPages/ClientAction/ClientAction";
 import FaqPosting from "./DashboardPages/FaqPosting/FaqPosting";
 import AdvertizingBanner from "./DashboardPages/AdvertizingBanner/AdvertizingBanner";
-import CreateProject from "./DashboardPages/CreateProject/CreateProject";
 import ViewProject from "./DashboardPages/ViewProject/ViewProject";
+import CreateProject from "./DashboardPages/CreateProject/CreateProject";
 
 
 
@@ -68,11 +68,6 @@ export default function App() {
           <Route path="/create/project" element={<CreateProject />} />
           <Route path="/create/manage-projects" element={<ViewProject />} />
 
-
-
-
-
-          
           </Route>
 
           {/* Auth Layout */}

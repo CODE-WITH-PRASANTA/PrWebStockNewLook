@@ -2,8 +2,17 @@ import React, { useState } from "react";
 import "./ViewProject.css";
 import { Edit, Trash2, ExternalLink } from "lucide-react";
 
-const ViewProject = () => {
-  const [projects, setProjects] = useState([
+interface Project {
+  id: number;
+  image: string;
+  name: string;
+  url: string;
+  category: string;
+  published: boolean;
+}
+
+const ViewProject: React.FC = () => {
+  const [projects, setProjects] = useState<Project[]>([
     {
       id: 1,
       image: "https://via.placeholder.com/300x180.png?text=Project+1",
@@ -22,13 +31,15 @@ const ViewProject = () => {
     },
   ]);
 
-  const handleDelete = (id) => {
+  const handleDelete = (id: number): void => {
     if (window.confirm("Are you sure you want to delete this project?")) {
-      setProjects(projects.filter((project) => project.id !== id));
+      setProjects((prevProjects) =>
+        prevProjects.filter((project) => project.id !== id)
+      );
     }
   };
 
-  const handleEdit = (id) => {
+  const handleEdit = (id: number): void => {
     alert(`Edit functionality for Project ID ${id} coming soon!`);
   };
 
@@ -59,6 +70,7 @@ const ViewProject = () => {
                 >
                   <ExternalLink size={16} /> Visit Project
                 </a>
+
                 <span
                   className={`status-badge ${
                     project.published ? "published" : "unpublished"
@@ -72,15 +84,13 @@ const ViewProject = () => {
                     className="edit-btn"
                     onClick={() => handleEdit(project.id)}
                   >
-                    <Edit size={18} />
-                    Edit
+                    <Edit size={18} /> Edit
                   </button>
                   <button
                     className="delete-btn"
                     onClick={() => handleDelete(project.id)}
                   >
-                    <Trash2 size={18} />
-                    Delete
+                    <Trash2 size={18} /> Delete
                   </button>
                 </div>
               </div>
